@@ -29,6 +29,10 @@ To exclude the "Select Locale" menu item from the front-end toolbar menu, *and i
 add_filter( 'jsm_user_locale_front_end', '__return_false' );
 `
 
+<blockquote>
+<p>There are no plugin settings to update or adjust &mdash; simply install and activate the plugin.</p>
+</blockquote>
+
 == Installation ==
 
 = Automated Install =

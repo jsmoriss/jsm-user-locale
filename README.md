@@ -25,6 +25,10 @@
 <pre><code>add_filter( 'jsm_user_locale_front_end', '__return_false' );
 </code></pre>
 
+<blockquote>
+<p>There are no plugin settings to update or adjust &mdash; simply install and activate the plugin.</p>
+</blockquote>
+
 
 <h2>Installation</h2>
 
