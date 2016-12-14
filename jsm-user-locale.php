@@ -10,7 +10,7 @@
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Add a locale (language) selector for users in the WordPress back-end and front-end toolbar menu.
- * Requires At Least: 4.7
+ * Requires At Least: 4.0
  * Tested Up To: 4.7
  * Version: 1.0.0-1
  *
@@ -104,8 +104,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			) );
 
 			require_once( ABSPATH . 'wp-admin/includes/translation-install.php' );
-			$translations = wp_get_available_translations();
-			$languages = array_merge( array( 'site-default' ), get_available_languages() );
+			$translations = wp_get_available_translations();	// since wp 4.0
+			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
 
 			foreach ( $languages as $locale ) {
 				if ( isset( $translations[$locale]['native_name'] ) ) {
