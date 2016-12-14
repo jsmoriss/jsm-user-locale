@@ -9,7 +9,7 @@ Donate Link: https://www.paypal.me/jsmoriss
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end
 Contributors: jsmoriss
-Requires At Least: 4.7
+Requires At Least: 4.0
 Tested Up To: 4.7
 Stable Tag: 1.0.0-1
 
