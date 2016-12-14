@@ -13,11 +13,17 @@ Requires At Least: 4.7
 Tested Up To: 4.7
 Stable Tag: 1.0.0-1
 
-Add an easy locale selector for users in the admin back-end and website front-end WordPress toolbar menus.
+Add a locale (language) selector for users in the WordPress back-end and front-end toolbar menu.
 
 == Description ==
 
-Add an easy locale selector for users in the admin back-end and website front-end WordPress toolbar menus.
+Add a "Select Locale" menu item for users in the WordPress back-end and front-end toolbar menu.
+
+Allow users to quickly change their preferred locale (language) instead of having to update their profile page.
+
+The default WordPress behavior is to apply the user locale preference to the back-end only &mdash; this plugin extends the user locale preference to the front-end webpage as well. To exclude the "Select Locale" menu item from the front-end toolbar menu, and ignore the user locale preference in the front-end webpage, add the following to your functions.php file:
+
+add_filter( 'jsm_user_locale_front_end', '__return_false' );
 
 == Installation ==
 

@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s User Locale</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Add an easy locale selector for users in the admin back-end and website front-end WordPress toolbar menus.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Add a locale (language) selector for users in the WordPress back-end and front-end toolbar menu.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0-1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 4.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.7</td></tr>
@@ -14,7 +14,13 @@
 
 <h2>Description</h2>
 
-<p>Add an easy locale selector for users in the admin back-end and website front-end WordPress toolbar menus.</p>
+<p>Add a "Select Locale" menu item for users in the WordPress back-end and front-end toolbar menu.</p>
+
+<p>Allow users to quickly change their preferred locale (language) instead of having to update their profile page.</p>
+
+<p>The default WordPress behavior is to apply the user locale preference to the back-end only &mdash; this plugin extends the user locale preference to the front-end webpage as well. To exclude the "Select Locale" menu item from the front-end toolbar menu, and ignore the user locale preference in the front-end webpage, add the following to your functions.php file:</p>
+
+<p>add_filter( 'jsm_user_locale_front_end', '__return_false' );</p>
 
 
 <h2>Installation</h2>
