@@ -1,10 +1,10 @@
-<h1>JSM&#039;s User Locale</h1>
+<h1>JSM&#039;s User Locale for the WordPress Toolbar Menu</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s User Locale</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Add a locale (language) selector for users in the WordPress back-end and front-end toolbar menu.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0-1</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 4.1</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 4.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>Website URL</th><td><a href="https://www.paypal.me/jsmoriss">https://www.paypal.me/jsmoriss</a></td></tr>
@@ -16,7 +16,7 @@
 
 <p>Add a "Select Locale" menu item for users in the WordPress back-end and front-end toolbar menu.</p>
 
-<p>Allow users to quickly change their preferred locale (language) instead of having to update their profile page.</p>
+<p>Allow users to easily change their preferred locale (language) instead of having to update their profile page.</p>
 
 <p>The default WordPress behavior is to apply the user locale preference to the back-end only &mdash; this plugin extends the user locale preference to the front-end webpage as well.</p>
 
@@ -26,7 +26,7 @@
 </code></pre>
 
 <blockquote>
-<p>There are no plugin settings to update or adjust &mdash; simply install and activate the plugin.</p>
+<p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
 

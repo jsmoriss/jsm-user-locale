@@ -1,4 +1,4 @@
-=== JSM's User Locale ===
+=== JSM's User Locale for the WordPress Toolbar Menu ===
 Plugin Name: JSM's User Locale
 Plugin Slug: jsm-user-locale
 Text Domain: jsm-user-locale
@@ -9,7 +9,7 @@ Donate Link: https://www.paypal.me/jsmoriss
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end
 Contributors: jsmoriss
-Requires At Least: 4.1
+Requires At Least: 4.7
 Tested Up To: 4.7
 Stable Tag: 1.0.0-1
 
@@ -19,7 +19,7 @@ Add a locale (language) selector for users in the WordPress back-end and front-e
 
 Add a "Select Locale" menu item for users in the WordPress back-end and front-end toolbar menu.
 
-Allow users to quickly change their preferred locale (language) instead of having to update their profile page.
+Allow users to easily change their preferred locale (language) instead of having to update their profile page.
 
 The default WordPress behavior is to apply the user locale preference to the back-end only &mdash; this plugin extends the user locale preference to the front-end webpage as well.
 
@@ -30,7 +30,7 @@ add_filter( 'jsm_user_locale_front_end', '__return_false' );
 `
 
 <blockquote>
-<p>There are no plugin settings to update or adjust &mdash; simply install and activate the plugin.</p>
+<p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
 == Installation ==
