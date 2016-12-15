@@ -12,11 +12,11 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-user-locale.php:102
+#: jsm-user-locale.php:103
 msgid "Select Locale"
 msgstr ""
 
-#: jsm-user-locale.php:121
+#: jsm-user-locale.php:122
 msgid "Default Locale"
 msgstr ""
 
