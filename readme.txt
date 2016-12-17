@@ -71,6 +71,8 @@ add_filter( 'jsm_user_locale_front_end', '__return_false' );
 
 == Screenshots ==
 
+01. The "Select Locale" menu item for users in the WordPress back-end and front-end toolbar menu.
+
 == Changelog ==
 
 = Repositories =
