@@ -30,8 +30,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Add a locale (language) selector for users in the WordPress back-end and "
-"front-end toolbar menu."
+"Add a locale (language) selector for users in the WordPress back-end (admin) "
+"and front-end toolbar menus."
 msgstr ""
 
 #. Author of the plugin/theme
