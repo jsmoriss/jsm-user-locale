@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s User Locale</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Add a locale (language) selector for users in the WordPress back-end (admin) and front-end toolbar menus.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Add a quick &amp; easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0-1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 4.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.7</td></tr>
@@ -16,9 +16,9 @@
 
 <p>Add a "Select Locale" menu item for users in the WordPress back-end (admin) and front-end toolbar menus.</p>
 
-<p>Allow users to easily change their preferred locale (language) instead of having to update their profile page.</p>
+<p>Allow users to easily change their preferred locale / language instead of having to update their profile page.</p>
 
-<p>The default WordPress behavior is to apply the user locale (language) preference to the back-end only &mdash; this plugin extends the user locale (language) preference to the front-end webpage as well.</p>
+<p>The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.</p>
 
 <blockquote>
 <p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
