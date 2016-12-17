@@ -23,12 +23,6 @@ Allow users to easily change their preferred locale (language) instead of having
 
 The default WordPress behavior is to apply the user locale (language) preference to the back-end only &mdash; this plugin extends the user locale (language) preference to the front-end webpage as well.
 
-To exclude the "Select Locale" menu item from the front-end toolbar menu, *and ignore the user locale (language) preference in the front-end webpage*, add the following to your functions.php file:
-
-`
-add_filter( 'jsm_user_locale_front_end', '__return_false' );
-`
-
 <blockquote>
 <p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
@@ -67,7 +61,11 @@ add_filter( 'jsm_user_locale_front_end', '__return_false' );
 
 = Additional Documentation =
 
-* None
+To exclude the "Select Locale" menu item from the front-end toolbar menu, *and ignore the user locale (language) preference in the front-end webpage*, add the following to your functions.php file:
+
+`
+add_filter( 'jsm_user_locale_front_end', '__return_false' );
+`
 
 == Screenshots ==
 
