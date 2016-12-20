@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM's User Locale package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's User Locale 1.0.0-1\n"
+"Project-Id-Version: JSM's User Locale 1.0.1-dev1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -12,11 +12,11 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-user-locale.php:102
+#: jsm-user-locale.php:125
 msgid "Select Locale"
 msgstr ""
 
-#: jsm-user-locale.php:121
+#: jsm-user-locale.php:144
 msgid "Default Locale"
 msgstr ""
 

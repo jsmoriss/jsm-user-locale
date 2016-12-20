@@ -12,7 +12,7 @@
  * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
- * Version: 1.0.0-1
+ * Version: 1.0.1-dev1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -64,7 +64,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
 				if ( isset( $_GET['update-user-locale'] ) )
-					add_action( 'init', array( __CLASS__, 'update_user_locale' ) );
+					add_action( 'wp', array( __CLASS__, 'update_user_locale' ) );
 			}
 		}
 
@@ -78,6 +78,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 
 		public static function update_user_locale() {
+			$is_admin = is_admin();
+
 			if ( isset( $_GET['update-user-locale'] ) ) {
 				$locale = sanitize_text_field( $_GET['update-user-locale'] );
 			} else return;
@@ -88,7 +90,28 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				else update_user_meta( $user_id, 'locale', $locale );
 			}
 
-			wp_redirect( remove_query_arg( 'update-user-locale' ) );	// reload the current page
+			if ( $locale === 'site-default' )
+				$locale = self::get_default_locale();
+
+			$url = remove_query_arg( 'update-user-locale' );
+
+			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
+				/*
+				if ( defined( 'PLL_COOKIE' ) && PLL_COOKIE !== false && isset( $_COOKIE[ PLL_COOKIE ] ) ) {
+					setcookie( PLL_COOKIE, null, -1, '/' );
+					unset( $_COOKIE[ PLL_COOKIE ] );
+				}
+				*/
+				$list = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
+				foreach ( $list as $lang ) {
+					if ( $lang['locale'] === $locale ) {
+						error_log( print_r( $lang, true ) );
+					}
+				}
+			}
+			
+			wp_redirect( $url );
+
 			exit;
 		}
 
@@ -135,6 +158,27 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 					'meta' => $meta,
 				) );
 			}
+		}
+
+		private static function get_default_locale() {
+			global $wp_local_package;
+			if ( isset( $wp_local_package ) )
+	      			$locale = $wp_local_package;
+			if ( defined( 'WPLANG' ) )
+				$locale = WPLANG;
+			if ( is_multisite() ) {
+				if ( ( $ms_locale = get_option( 'WPLANG' ) ) === false )
+					$ms_locale = get_site_option( 'WPLANG' );
+				if ( $ms_locale !== false )
+					$locale = $ms_locale;
+			} else {
+				$db_locale = get_option( 'WPLANG' );
+				if ( $db_locale !== false )
+					$locale = $db_locale;
+			}
+			if ( empty( $locale ) )
+				$locale = 'en_US';      // just in case
+			return $locale;
 		}
 	}
 
