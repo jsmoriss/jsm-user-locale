@@ -12,7 +12,7 @@
  * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
- * Version: 1.0.1-dev1
+ * Version: 1.1.0-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -81,33 +81,40 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$is_admin = is_admin();
 
 			if ( isset( $_GET['update-user-locale'] ) ) {
-				$locale = sanitize_text_field( $_GET['update-user-locale'] );
+				$user_locale = sanitize_text_field( $_GET['update-user-locale'] );
 			} else return;
-
-			if ( $user_id = get_current_user_id() ) {
-				if ( $locale === 'site-default' )
-					delete_user_meta( $user_id, 'locale' );
-				else update_user_meta( $user_id, 'locale', $locale );
-			}
-
-			if ( $locale === 'site-default' )
-				$locale = self::get_default_locale();
 
 			$url = remove_query_arg( 'update-user-locale' );
 
+			if ( $user_id = get_current_user_id() ) {
+				if ( $user_locale === 'site-default' )
+					delete_user_meta( $user_id, 'locale' );
+				else update_user_meta( $user_id, 'locale', $user_locale );
+			}
+
+			if ( $user_locale === 'site-default' )
+				$user_locale = self::get_default_locale();
+
+			/*
+			 * Redirect to Polylang URLs
+			 */
 			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
-				/*
-				if ( defined( 'PLL_COOKIE' ) && PLL_COOKIE !== false && isset( $_COOKIE[ PLL_COOKIE ] ) ) {
-					setcookie( PLL_COOKIE, null, -1, '/' );
-					unset( $_COOKIE[ PLL_COOKIE ] );
-				}
-				*/
-				$list = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
-				foreach ( $list as $lang ) {
-					if ( $lang['locale'] === $locale ) {
-						error_log( print_r( $lang, true ) );
+
+				$pll_languages = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
+				$pll_def_locale = pll_default_language( 'locale' );
+				$pll_urls = array();	// associative array of locales and their url
+
+				foreach ( $pll_languages as $pll_lang ) {
+					if ( ! empty( $pll_lang['locale'] ) && ! empty( $pll_lang['url'] ) ) {
+						$pll_locale = str_replace( '-', '_', $pll_lang['locale'] );	// wp compatibility
+						$pll_urls[$pll_locale] = $pll_lang['url'];
 					}
 				}
+
+				if ( isset( $pll_urls[$user_locale] ) )
+					$url = $pll_urls[$user_locale];
+				elseif ( isset( $pll_urls[$pll_def_locale] ) )
+					$url = $pll_urls[$pll_def_locale];
 			}
 			
 			wp_redirect( $url );
