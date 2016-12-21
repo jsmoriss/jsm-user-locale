@@ -72,11 +72,15 @@ add_filter( 'jsm_user_locale_front_end', '__return_false' );
 To modify the "User Locale" menu title, you can hook the 'jsm_user_locale_menu_title' filter:
 
 `
-add_filter( 'jsm_user_locale_menu_title', 'customize_user_locale_menu_title', 10, 2 );
+add_filter( 'jsm_user_locale_menu_title', 
+	'customize_user_locale_menu_title', 10, 2 );
 
 function customize_user_locale_menu_title( $title, $user_locale ) {
-	return sprintf( __( 'Select Locale (%s)', 'jsm-user-locale' ),
-		( $user_locale === 'site-default' ? __( 'default', 'jsm-user-locale' ) : $user_locale ) );
+	$menu_locale = $user_locale === 'site-default' ? 
+		__( 'default', 'jsm-user-locale' ) : $user_locale;
+
+	return sprintf( __( 'Select Locale (%s)',
+		'jsm-user-locale' ), $menu_locale );
 }
 `
 
