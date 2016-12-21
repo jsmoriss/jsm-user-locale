@@ -12,7 +12,7 @@
  * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
- * Version: 1.1.0-1
+ * Version: 1.1.1-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -64,7 +64,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
 				if ( isset( $_GET['update-user-locale'] ) )
-					add_action( 'wp', array( __CLASS__, 'update_user_locale' ) );
+					add_action( 'init', array( __CLASS__, 'update_user_locale' ) );
 			}
 		}
 
@@ -127,19 +127,22 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				return;
 
 			global $wp_admin_bar;
+			require_once( ABSPATH.'wp-admin/includes/translation-install.php' );
+			$translations = wp_get_available_translations();	// since wp 4.0
+			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
+			$user_locale = get_user_meta( $user_id, 'locale', true );
+
+			if ( empty( $user_locale ) )
+				$user_locale = 'site-default';
+
 			$wp_admin_bar->add_node( array(	// since wp 3.1
 				'id' => 'jsm-user-locale',
-				'title' => __( 'Select Locale', 'jsm-user-locale' ),
+				'title' => sprintf( __( 'Locale (%s)', 'jsm-user-locale' ), $user_locale ),
 				'parent' => false,
 				'href' => false,
 				'group' => false,
 				'meta' => false,
 			) );
-
-			require_once( ABSPATH . 'wp-admin/includes/translation-install.php' );
-			$translations = wp_get_available_translations();	// since wp 4.0
-			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
-			$user_locale = get_user_meta( $user_id, 'locale', true );
 
 			foreach ( $languages as $locale ) {
 				$meta = array();
@@ -152,7 +155,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				} else {
 					$native_name = $locale;
 				}
-				if ( ( empty( $user_locale ) && $locale === 'site-default' ) || $locale === $user_locale ) {
+				if ( $locale === $user_locale ) {
 					$native_name = '<strong>'.$native_name.'</strong>';
 					$meta['class'] = 'current_locale';
 				}
