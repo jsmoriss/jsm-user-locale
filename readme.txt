@@ -31,7 +31,7 @@ If the Polylang plugin is available, the "User Locale" menu will use Polylang la
 
 = Developers =
 
-See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other_notes/) for available filters and examples.
+See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other_notes/) page for available filters and examples.
 
 == Installation ==
 
