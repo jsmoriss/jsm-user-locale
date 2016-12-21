@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: JSM's User Locale 1.1.2-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
-"POT-Creation-Date: 2016-12-21 17:31+1100\n"
-"PO-Revision-Date: 2016-12-21 17:31+1100\n"
+"POT-Creation-Date: 2016-12-22 07:30+1100\n"
+"PO-Revision-Date: 2016-12-22 07:31+1100\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,14 +15,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: jsm-user-locale.php:139
-msgid "User Locale (%s)"
-msgstr "Langue d'usager (%s)"
-
-#: jsm-user-locale.php:140
 msgid "default"
 msgstr "défaut"
 
-#: jsm-user-locale.php:159
+#: jsm-user-locale.php:142
+msgid "User Locale (%s)"
+msgstr "Langue d'usager (%s)"
+
+#: jsm-user-locale.php:161
 msgid "Default Locale"
 msgstr "Langue par défaut"
 
