@@ -23,6 +23,8 @@ Allow users to easily change their preferred locale / language instead of having
 
 The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.
 
+If the Polylang plugin is available, the "Select Locale" menu will use Polylang language URLs for that locale.
+
 <blockquote>
 <p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
@@ -91,6 +93,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.1.0-1 (2016/12/21)**
+
+* *New Features*
+	* Added Polylang integration - the "Select Locale" menu will use the Polylang language URLs if available.
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.0.0-1 (2016/12/17)**
 
 * *New Features*
@@ -103,6 +116,10 @@ Note that the production stage level can be incremented on occasion for simple t
 	* None
 
 == Upgrade Notice ==
+
+= 1.1.0-1 =
+
+(2016/12/21) Added Polylang integration - the "Select Locale" menu will use the Polylang language URLs if available.
 
 = 1.0.0-1 =
 
