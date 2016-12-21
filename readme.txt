@@ -63,11 +63,23 @@ If the Polylang plugin is available, the "User Locale" menu will use Polylang la
 
 = Additional Documentation =
 
-To exclude the "User Locale" menu item from the front-end toolbar menu, *and ignore the user locale (language) preference in the front-end webpage*, add the following to your functions.php file:
+To exclude the "User Locale" menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following to your functions.php file:
 
 `
 add_filter( 'jsm_user_locale_front_end', '__return_false' );
 `
+
+To modify the "User Locale" menu title, you can hook the 'jsm_user_locale_menu_title' filter:
+
+`
+add_filter( 'jsm_user_locale_menu_title', 'customize_user_locale_menu_title', 10, 2 );
+
+function customize_user_locale_menu_title( $title, $user_locale ) {
+	return sprintf( __( 'Select Locale (%s)', 'jsm-user-locale' ),
+		( $user_locale === 'site-default' ? __( 'default', 'jsm-user-locale' ) : $user_locale ) );
+}
+`
+
 
 == Screenshots ==
 
