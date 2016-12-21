@@ -116,8 +116,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				elseif ( isset( $pll_urls[$pll_def_locale] ) )
 					$url = $pll_urls[$pll_def_locale];
 			}
-			
-			wp_redirect( $url );
+
+			wp_redirect( apply_filters( 'jsm_user_locale_redirect_url', $url, $user_locale ) );
 
 			exit;
 		}
@@ -135,10 +135,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( empty( $user_locale ) )
 				$user_locale = 'site-default';
 
+			$menu_locale = $user_locale === 'site-default' ? 
+				__( 'default', 'jsm-user-locale' ) : $user_locale;
+
 			$menu_title = apply_filters( 'jsm_user_locale_menu_title',
 				sprintf( __( 'User Locale (%s)', 'jsm-user-locale' ),
-					( $user_locale === 'site-default' ? __( 'default', 'jsm-user-locale' ) : 
-						$user_locale ) ), $user_locale );
+					$menu_locale ), $user_locale );
 
 			$wp_admin_bar->add_node( array(	// since wp 3.1
 				'id' => 'jsm-user-locale',
