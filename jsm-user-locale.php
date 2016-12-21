@@ -3,10 +3,10 @@
  * Plugin Name: JSM's User Locale
  * Text Domain: jsm-user-locale
  * Domain Path: /languages
- * Plugin URI: http://surniaulula.com/extend/plugins/jsm-user-locale/
+ * Plugin URI: https://surniaulula.com/extend/plugins/jsm-user-locale/
  * Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
  * Author: JS Morisset
- * Author URI: http://surniaulula.com/
+ * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
@@ -33,7 +33,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2012-2016 Jean-Sebastien Morisset (http://surniaulula.com/)
+ * Copyright 2012-2016 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) 
