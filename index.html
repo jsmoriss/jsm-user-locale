@@ -100,9 +100,19 @@
 <h3>Other Notes</h3>
 <h4>Additional Documentation</h4>
 
-<p>To exclude the "User Locale" menu item from the front-end toolbar menu, <em>and ignore the user locale (language) preference in the front-end webpage</em>, add the following to your functions.php file:</p>
+<p>To exclude the "User Locale" menu item from the front-end toolbar menu, <em>and ignore the user locale / language preference in the front-end webpage</em>, add the following to your functions.php file:</p>
 
 <pre><code>add_filter( 'jsm_user_locale_front_end', '__return_false' );
+</code></pre>
+
+<p>To modify the "User Locale" menu title, you can hook the 'jsm_user_locale_menu_title' filter:</p>
+
+<pre><code>add_filter( 'jsm_user_locale_menu_title', 'customize_user_locale_menu_title', 10, 2 );
+
+function customize_user_locale_menu_title( $title, $user_locale ) {
+    return sprintf( __( 'Select Locale (%s)', 'jsm-user-locale' ),
+        ( $user_locale === 'site-default' ? __( 'default', 'jsm-user-locale' ) : $user_locale ) );
+}
 </code></pre>
 
       </section>
