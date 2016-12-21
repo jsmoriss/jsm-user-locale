@@ -137,7 +137,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			$wp_admin_bar->add_node( array(	// since wp 3.1
 				'id' => 'jsm-user-locale',
-				'title' => sprintf( __( 'Locale (%s)', 'jsm-user-locale' ), $user_locale ),
+				'title' => sprintf( __( 'User Locale (%s)', 'jsm-user-locale' ), $user_locale ),
 				'parent' => false,
 				'href' => false,
 				'group' => false,

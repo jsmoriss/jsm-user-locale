@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: jsm-user-locale.php:140
-msgid "Locale (%s)"
+msgid "User Locale (%s)"
 msgstr ""
 
 #: jsm-user-locale.php:154
