@@ -12,7 +12,7 @@
  * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
- * Version: 1.1.1-1
+ * Version: 1.1.2-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -135,9 +135,14 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( empty( $user_locale ) )
 				$user_locale = 'site-default';
 
+			$menu_title = apply_filters( 'jsm_user_locale_menu_title',
+				sprintf( __( 'User Locale (%s)', 'jsm-user-locale' ),
+					( $user_locale === 'site-default' ? __( 'default', 'jsm-user-locale' ) : 
+						$user_locale ) ), $user_locale );
+
 			$wp_admin_bar->add_node( array(	// since wp 3.1
 				'id' => 'jsm-user-locale',
-				'title' => sprintf( __( 'User Locale (%s)', 'jsm-user-locale' ), $user_locale ),
+				'title' => $menu_title,
 				'parent' => false,
 				'href' => false,
 				'group' => false,
