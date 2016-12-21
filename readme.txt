@@ -29,6 +29,10 @@ If the Polylang plugin is available, the "User Locale" menu will use Polylang la
 <p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
+= Developers =
+
+See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other_notes/) for available filters and examples.
+
 == Installation ==
 
 = Automated Install =
@@ -79,11 +83,24 @@ function customize_user_locale_menu_title( $title, $user_locale ) {
 	$menu_locale = $user_locale === 'site-default' ? 
 		__( 'default', 'jsm-user-locale' ) : $user_locale;
 
-	return sprintf( __( 'Select Locale (%s)',
+	$title = sprintf( __( 'Select Locale (%s)',
 		'jsm-user-locale' ), $menu_locale );
+
+	return $title;
 }
 `
 
+You can also modify the URL used to reload the page after selecting a locale by hooking the 'jsm_user_locale_redirect_url' filter.
+
+`
+add_filter( 'jsm_user_locale_redirect_url', 
+	'customize_user_locale_redirect_url', 10, 2 );
+
+function customize_user_locale_redirect_url( $url, $user_locale ) {
+	// modify the redirect url here
+	return $url;
+}
+`
 
 == Screenshots ==
 
