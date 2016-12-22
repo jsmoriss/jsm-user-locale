@@ -12,7 +12,7 @@
  * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
- * Version: 1.1.2-1
+ * Version: 1.1.3-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -61,10 +61,30 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( $is_admin || $on_front ) {
 				load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
 				if ( isset( $_GET['update-user-locale'] ) )
 					add_action( 'init', array( __CLASS__, 'update_user_locale' ) );
+			}
+		}
+
+		public static function check_wp_version() {
+			require_once( ABSPATH.'wp-admin/includes/plugin.php' );	// just in case
+			global $wp_version;
+			$min_version = 4.7;
+			$plugin = plugin_basename( __FILE__ );
+			$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
+			if ( version_compare( $wp_version, $min_version, '<' ) ) {
+				if ( is_plugin_active( $plugin ) ) {
+					deactivate_plugins( $plugin );
+					wp_die( 
+						sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
+							'jsm-user-locale' ), $plugin_data['Name'], $min_version ).'<br/><br/>'.
+						sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
+							'jsm-user-locale' ), $plugin_data['Name'] )
+					);
+				}
 			}
 		}
 

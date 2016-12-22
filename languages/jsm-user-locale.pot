@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM's User Locale package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's User Locale 1.1.2-1\n"
+"Project-Id-Version: JSM's User Locale 1.1.3-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -12,15 +12,24 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-user-locale.php:139
+#: jsm-user-locale.php:82
+msgid ""
+"%1$s requires WordPress version %2$s or higher and has been deactivated."
+msgstr ""
+
+#: jsm-user-locale.php:84
+msgid "Please upgrade WordPress before trying to reactivate the %1$s plugin."
+msgstr ""
+
+#: jsm-user-locale.php:159
 msgid "default"
 msgstr ""
 
-#: jsm-user-locale.php:142
+#: jsm-user-locale.php:162
 msgid "User Locale (%s)"
 msgstr ""
 
-#: jsm-user-locale.php:161
+#: jsm-user-locale.php:181
 msgid "Default Locale"
 msgstr ""
 
