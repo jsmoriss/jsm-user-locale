@@ -126,6 +126,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.1.3-1 (2016/12/23)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Added a JSM_User_Locale::check_wp_version() method hooked to 'admin_init'.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.1.2-1 (2016/12/21)**
 
 * *New Features*
@@ -149,6 +160,10 @@ Note that the production stage level can be incremented on occasion for simple t
 	* None
 
 == Upgrade Notice ==
+
+= 1.1.3-1 =
+
+(2016/12/23) Added a JSM_User_Locale::check_wp_version() method hooked to 'admin_init'.
 
 = 1.1.2-1 =
 
