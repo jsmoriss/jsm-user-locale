@@ -28,7 +28,7 @@
 
 <h4>Developers</h4>
 
-<p>See the plugin <a href="https://wordpress.org/plugins/jsm-user-locale/other_notes/">Other Notes</a> page for available filters and examples.</p>
+<p>See the plugin <a href="https://wordpress.org/plugins/jsm-user-locale/other_notes/">Other Notes</a> page for information on available filters.</p>
 
 
 <h2>Installation</h2>
