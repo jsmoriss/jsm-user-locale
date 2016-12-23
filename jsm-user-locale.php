@@ -33,7 +33,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2012-2016 Jean-Sebastien Morisset (https://surniaulula.com/)
+ * Copyright 2016 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) 
@@ -43,10 +43,11 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 	class JSM_User_Locale {
 
-		protected static $instance = null;
+		private static $instance;
+		private static $wp_min_version = 4.7;
 
 		public static function &get_instance() {
-			if ( self::$instance === null )
+			if ( ! isset( self::$instance ) )
 				self::$instance = new self;
 			return self::$instance;
 		}
@@ -71,8 +72,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 		public static function check_wp_version() {
 			global $wp_version;
-			$min_version = 4.7;
-			if ( version_compare( $wp_version, $min_version, '<' ) ) {
+			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
 					require_once( ABSPATH.'wp-admin/includes/plugin.php' );	// just in case
@@ -80,7 +80,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 					deactivate_plugins( $plugin );
 					wp_die( 
 						sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
-							'jsm-user-locale' ), $plugin_data['Name'], $min_version ).'<br/><br/>'.
+							'jsm-user-locale' ), $plugin_data['Name'], self::$wp_min_version ).'<br/><br/>'.
 						sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
 							'jsm-user-locale' ), $plugin_data['Name'] )
 					);
