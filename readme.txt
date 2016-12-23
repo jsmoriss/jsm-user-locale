@@ -67,6 +67,8 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other
 
 = Additional Documentation =
 
+**Developer Filters**
+
 To exclude the "User Locale" menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following to your functions.php file:
 
 `

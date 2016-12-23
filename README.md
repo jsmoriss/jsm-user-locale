@@ -74,6 +74,8 @@
 <h3>Other Notes</h3>
 <h4>Additional Documentation</h4>
 
+<p><strong>Developer Filters</strong></p>
+
 <p>To exclude the "User Locale" menu item from the front-end toolbar menu, <em>and ignore the user locale / language preference in the front-end webpage</em>, add the following to your functions.php file:</p>
 
 <pre><code>add_filter( 'jsm_user_locale_front_end', '__return_false' );
