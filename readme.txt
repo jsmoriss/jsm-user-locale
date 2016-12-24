@@ -26,7 +26,7 @@ The default WordPress behavior is to apply the user locale / language preference
 If the Polylang plugin is available, the "User Locale" menu will use Polylang language URLs for that locale.
 
 <blockquote>
-<p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
+<p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
 = Developers =
