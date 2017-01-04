@@ -46,12 +46,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		private static $instance;
 		private static $wp_min_version = 4.7;
 
-		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
-				self::$instance = new self;
-			return self::$instance;
-		}
-
 		public function __construct() {
 			$is_admin = is_admin();
 			$on_front = apply_filters( 'jsm_user_locale_front_end', true );	// apply user locale on front-end
@@ -68,6 +62,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				if ( isset( $_GET['update-user-locale'] ) )
 					add_action( 'init', array( __CLASS__, 'update_user_locale' ) );
 			}
+		}
+
+		public static function &get_instance() {
+			if ( ! isset( self::$instance ) )
+				self::$instance = new self;
+			return self::$instance;
 		}
 
 		public static function check_wp_version() {
