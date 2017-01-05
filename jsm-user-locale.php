@@ -9,7 +9,7 @@
  * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: Add a quick & easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus. 
+ * Description: Add a quick and easy user locale / language selector for the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
  * Version: 1.1.3-1
