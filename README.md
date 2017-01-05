@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s User Locale</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Add a quick &amp; easy locale / language selector for users in the WordPress admin back-end and front-end toolbar menus.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Add a quick and easy user locale / language selector for the WordPress admin back-end and front-end toolbar menus.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.3-1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 4.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.7</td></tr>
