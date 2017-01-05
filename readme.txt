@@ -13,7 +13,7 @@ Requires At Least: 4.7
 Tested Up To: 4.7
 Stable Tag: 1.1.3-1
 
-Add a quick and easy user locale / language selector for the WordPress admin back-end and front-end toolbar menus.
+Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
 
 == Description ==
 
