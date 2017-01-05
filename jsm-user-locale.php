@@ -9,7 +9,7 @@
  * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: Add a quick and easy user locale / language selector for the WordPress admin back-end and front-end toolbar menus. 
+ * Description: Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
  * Tested Up To: 4.7
  * Version: 1.1.3-1
@@ -48,9 +48,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 		public function __construct() {
 			$is_admin = is_admin();
-			$on_front = apply_filters( 'jsm_user_locale_front_end', true );	// apply user locale on front-end
+			$on_front = apply_filters( 'jsm_user_locale_front_end', true );
 
-			if ( ! $is_admin && $on_front )
+			if ( ! $is_admin && $on_front )	// apply user locale value to front-end
 				add_filter( 'locale', array( __CLASS__, 'get_user_locale' ) );
 
 			if ( $is_admin || $on_front ) {
@@ -59,8 +59,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
-				if ( isset( $_GET['update-user-locale'] ) )
-					add_action( 'init', array( __CLASS__, 'update_user_locale' ) );
+				if ( isset( $_GET['update-user-locale'] ) )	// new user locale value selected
+					add_action( 'init', array( __CLASS__, 'update_user_locale' ), -100 );
 			}
 		}
 
@@ -119,7 +119,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			 * Redirect to Polylang URLs
 			 */
 			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
-
 				$pll_languages = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
 				$pll_def_locale = pll_default_language( 'locale' );
 				$pll_urls = array();	// associative array of locales and their url
