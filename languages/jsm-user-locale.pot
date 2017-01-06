@@ -12,24 +12,24 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-user-locale.php:82
+#: jsm-user-locale.php:85
 msgid ""
 "%1$s requires WordPress version %2$s or higher and has been deactivated."
 msgstr ""
 
-#: jsm-user-locale.php:84
+#: jsm-user-locale.php:87
 msgid "Please upgrade WordPress before trying to reactivate the %1$s plugin."
 msgstr ""
 
-#: jsm-user-locale.php:158
+#: jsm-user-locale.php:161
 msgid "default"
 msgstr ""
 
-#: jsm-user-locale.php:161
+#: jsm-user-locale.php:164
 msgid "User Locale (%s)"
 msgstr ""
 
-#: jsm-user-locale.php:180
+#: jsm-user-locale.php:183
 msgid "Default Locale"
 msgstr ""
 

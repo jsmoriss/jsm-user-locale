@@ -54,8 +54,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				add_filter( 'locale', array( __CLASS__, 'get_user_locale' ) );
 
 			if ( $is_admin || $on_front ) {
-				load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
-
+				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
@@ -68,6 +67,10 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( ! isset( self::$instance ) )
 				self::$instance = new self;
 			return self::$instance;
+		}
+
+		public static function load_textdomain() {
+			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 		}
 
 		public static function check_wp_version() {
