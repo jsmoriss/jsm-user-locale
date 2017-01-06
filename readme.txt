@@ -106,7 +106,7 @@ function customize_user_locale_redirect_url( $url, $user_locale ) {
 
 == Screenshots ==
 
-01. The "User Locale" menu item for users in the WordPress back-end and front-end toolbar menu.
+01. An example "User Locale" language selector in the WordPress front-end toolbar menu.
 
 == Changelog ==
 
@@ -127,6 +127,18 @@ Version components: `{major}.{minor}.{bugfix}-{stage}{level}`
 Note that the production stage level can be incremented on occasion for simple text revisions and/or translation updates. See [PHP's version_compare()](http://php.net/manual/en/function.version-compare.php) documentation for additional information on "PHP-standardized" version numbering.
 
 = Changelog / Release Notes =
+
+**Version 1.1.4-1 (2017/01/07)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added a filters.txt file to document the available filter hooks.
+	* Changed the 'jsm_user_locale_menu_title' filter to pass the menu title before sprintf().
 
 **Version 1.1.3-1 (2016/12/23)**
 
@@ -162,6 +174,10 @@ Note that the production stage level can be incremented on occasion for simple t
 	* None
 
 == Upgrade Notice ==
+
+= 1.1.4-1 =
+
+(2017/01/07) Added a filters.txt file to document the available filter hooks. Changed the 'jsm_user_locale_menu_title' filter to pass the menu title before sprintf().
 
 = 1.1.3-1 =
 
