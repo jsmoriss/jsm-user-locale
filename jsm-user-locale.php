@@ -119,7 +119,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				$user_locale = self::get_default_locale();
 
 			/*
-			 * Redirect to Polylang URLs
+			 * Prefer Polylang URLs
 			 */
 			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
 				$pll_languages = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
