@@ -128,7 +128,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.1.4-1 (2017/01/07)**
+**Version 1.1.4-1 (2017/01/08)**
 
 * *New Features*
 	* None
@@ -177,7 +177,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = 1.1.4-1 =
 
-(2017/01/07) Added a filters.txt file to document the available filter hooks. Changed the 'jsm_user_locale_menu_title' filter to pass the menu title before sprintf().
+(2017/01/08) Added a filters.txt file to document the available filter hooks. Changed the 'jsm_user_locale_menu_title' filter to pass the menu title before sprintf().
 
 = 1.1.3-1 =
 
