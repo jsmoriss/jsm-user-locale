@@ -69,7 +69,7 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other
 
 **Developer Filters**
 
-To exclude the "User Locale" menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following to your functions.php file:
+To exclude the "User Locale" menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following filter hook to your functions.php file:
 
 `
 add_filter( 'jsm_user_locale_front_end', '__return_false' );
@@ -81,14 +81,8 @@ To modify the "User Locale" menu title, you can hook the 'jsm_user_locale_menu_t
 add_filter( 'jsm_user_locale_menu_title', 
 	'customize_user_locale_menu_title', 10, 2 );
 
-function customize_user_locale_menu_title( $title, $user_locale ) {
-	$menu_locale = $user_locale === 'site-default' ? 
-		__( 'default', 'jsm-user-locale' ) : $user_locale;
-
-	$title = sprintf( __( 'Select Locale (%s)',
-		'jsm-user-locale' ), $menu_locale );
-
-	return $title;
+function customize_user_locale_menu_title( $title, $menu_locale ) {
+	return __( 'Select Locale (%s)', 'your_text_domain' );
 }
 `
 
