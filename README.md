@@ -9,7 +9,7 @@
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>Website URL</th><td><a href="https://www.paypal.me/jsmoriss">https://www.paypal.me/jsmoriss</a></td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>user, locale, language, select, admin, back-end, front-end</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>user, locale, language, select, admin, back-end, front-end, polylang</td></tr>
 </table>
 
 <h2>Description</h2>
