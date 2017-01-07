@@ -34,7 +34,7 @@
 
 <h4>Do you use the WPSSO plugin?</h4>
 
-<p>If you're using the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, the <a href="https://wordpress.org/plugins/wpsso-user-locale/">WPSSO User Locale (WPSSO UL)</a> extension offers the same functionality, with an additional settings page to modify the menu title and enable/disable user locale / language use on the front-end.</p>
+<p>If you're using the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, the <a href="https://wordpress.org/plugins/wpsso-user-locale/">WPSSO User Locale (WPSSO UL)</a> extension offers the same functionality, with an additional settings page to modify the menu title and enable/disable the "User Locale" menu on the front-end.</p>
 
 
 <h2>Installation</h2>
