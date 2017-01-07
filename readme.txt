@@ -17,17 +17,21 @@ Add a quick and easy user locale / language selector in the WordPress admin back
 
 == Description ==
 
-Add a "User Locale" menu item for users in the WordPress back-end (admin) and front-end toolbar menus.
+Add a "User Locale" menu item for users in the WordPress admin back-end and front-end toolbar menus.
 
 Allow users to easily change their preferred locale / language instead of having to update their profile page.
 
 The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.
 
-If the Polylang plugin is available, the "User Locale" menu will use Polylang language URLs for that locale.
+If the Polylang plugin is available, the "User Locale" menu will automatically use the correct Polylang language URLs.
 
 <blockquote>
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
+
+= Are you using the WPSSO plugin? =
+
+If you're using the [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the additional of a settings page to modify the menu title and enable/disable user locale use on the front-end.
 
 = Developers =
 
