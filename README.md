@@ -20,8 +20,6 @@
 
 <p>The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.</p>
 
-<p>If the Polylang plugin is available, the "User Locale" menu will automatically use the correct Polylang language URLs.</p>
-
 <blockquote>
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
@@ -29,6 +27,10 @@
 <h4>Developers</h4>
 
 <p>See the plugin <a href="https://wordpress.org/plugins/jsm-user-locale/other_notes/">Other Notes</a> page for information on available filters.</p>
+
+<h4>Do you use the Polylang plugin?</h4>
+
+<p>If the Polylang plugin is active, the "User Locale" menu will automatically use the correct Polylang language URLs for the current webpage.</p>
 
 <h4>Do you use the WPSSO plugin?</h4>
 
