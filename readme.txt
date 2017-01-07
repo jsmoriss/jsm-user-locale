@@ -29,13 +29,13 @@ If the Polylang plugin is available, the "User Locale" menu will automatically u
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-= Are you using the WPSSO plugin? =
-
-If you're using the [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the additional of a settings page to modify the menu title and enable/disable user locale use on the front-end.
-
 = Developers =
 
 See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other_notes/) page for information on available filters.
+
+= Do you use the WPSSO plugin? =
+
+If you're using the [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with an additional settings page to modify the menu title and enable/disable user locale / language use on the front-end.
 
 == Installation ==
 

@@ -26,13 +26,13 @@
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h4>Are you using the WPSSO plugin?</h4>
-
-<p>If you're using the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, the <a href="https://wordpress.org/plugins/wpsso-user-locale/">WPSSO User Locale (WPSSO UL)</a> extension offers the same functionality, with the additional of a settings page to modify the menu title and enable/disable user locale use on the front-end.</p>
-
 <h4>Developers</h4>
 
 <p>See the plugin <a href="https://wordpress.org/plugins/jsm-user-locale/other_notes/">Other Notes</a> page for information on available filters.</p>
+
+<h4>Do you use the WPSSO plugin?</h4>
+
+<p>If you're using the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, the <a href="https://wordpress.org/plugins/wpsso-user-locale/">WPSSO User Locale (WPSSO UL)</a> extension offers the same functionality, with an additional settings page to modify the menu title and enable/disable user locale / language use on the front-end.</p>
 
 
 <h2>Installation</h2>
