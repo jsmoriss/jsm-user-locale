@@ -112,7 +112,7 @@ function customize_user_locale_redirect_url( $url, $user_locale ) {
 
 = Repositories =
 
-* [GitHub](https://github.com/jsmoriss/jsm-user-locale)
+* [GitHub](https://jsmoriss.github.io/jsm-user-locale/)
 * [WordPress.org](https://wordpress.org/plugins/jsm-user-locale/developers/)
 
 = Version Numbering Scheme =
