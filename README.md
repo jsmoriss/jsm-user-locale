@@ -16,7 +16,7 @@
 
 <p>Add a "User Locale" menu item for users in the WordPress admin back-end and front-end toolbar menus.</p>
 
-<p>Allow users to easily change their preferred locale / language instead of having to update their profile page.</p>
+<p>Allows users to easily change their preferred locale / language setting from the toolbar instead of having to update their WordPress profile page.</p>
 
 <p>The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.</p>
 
