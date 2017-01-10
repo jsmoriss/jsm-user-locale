@@ -11,7 +11,7 @@ Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
 Requires At Least: 4.7
 Tested Up To: 4.7
-Stable Tag: 1.1.4-1
+Stable Tag: 1.2.0-1
 
 Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
 
