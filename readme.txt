@@ -131,7 +131,7 @@ Note that the production stage level can be incremented on occasion for simple t
 **Version 1.2.0-1 (2017/01/10)**
 
 * *New Features*
-	* Added a dashicon before the user locale menu title (default is dashicon number 326).
+	* Added a dashicon before the user locale menu title (default is the "translation" dashicon number 326).
 * *Improvements*
 	* Changed the "Toolbar Menu Title" default value from "User Locale (%s)" to "%s".
 * *Bugfixes*
