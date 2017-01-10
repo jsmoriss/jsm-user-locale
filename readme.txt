@@ -33,11 +33,11 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other
 
 = Do you use the Polylang plugin? =
 
-If the Polylang plugin is active, the "User Locale" menu will automatically use the correct Polylang language URLs for the current webpage.
+If the Polylang plugin is active, the user locale menu will automatically use the correct Polylang language URLs for the current webpage.
 
 = Do you use the WPSSO plugin? =
 
-If you're using the [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the addition of a settings page to modify the menu title and enable/disable the "User Locale" menu on the front-end.
+If you're using the [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the addition of a settings page to modify the menu icon, menu title, and enable/disable the user locale menu on the front-end.
 
 == Installation ==
 
@@ -75,7 +75,7 @@ If you're using the [WordPress Social Sharing Optimization (WPSSO)](https://word
 
 **Developer Filters**
 
-To exclude the "User Locale" menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following filter hook to your functions.php file:
+To exclude the user locale menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following filter hook to your functions.php file:
 
 `
 add_filter( 'jsm_user_locale_front_end', '__return_false' );
@@ -92,7 +92,7 @@ function customize_user_locale_menu_title( $menu_title, $menu_locale ) {
 }
 `
 
-You can also modify the URL used to reload the page after selecting a locale by hooking the 'jsm_user_locale_redirect_url' filter.
+You can also modify the URL used to reload the page (after selecting a locale from the menu) by hooking the 'jsm_user_locale_redirect_url' filter.
 
 `
 add_filter( 'jsm_user_locale_redirect_url', 
