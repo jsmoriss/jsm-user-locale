@@ -14,11 +14,11 @@
 
 <h2>Description</h2>
 
-<p>Add a "User Locale" menu item for users in the WordPress admin back-end and front-end toolbar menus.</p>
+<p>Add a user locale drop-down menu item in the WordPress admin back-end admin and front-end toolbar menus.</p>
 
-<p>Allows users to easily change their preferred locale / language setting from the toolbar instead of having to update their WordPress profile page.</p>
+<p>Allows users to easily change their preferred locale / language setting from the toolbar menu instead of having to update their WordPress profile page.</p>
 
-<p>The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.</p>
+<p>The default WordPress behavior is to apply the user locale preference to the admin back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.</p>
 
 <blockquote>
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
@@ -87,13 +87,13 @@
 <pre><code>add_filter( 'jsm_user_locale_front_end', '__return_false' );
 </code></pre>
 
-<p>To modify the "User Locale" menu title, you can hook the 'jsm_user_locale_menu_title' filter:</p>
+<p>To modify the user locale menu title (default is "%s"), you can hook the 'jsm_user_locale_menu_title' filter:</p>
 
 <pre><code>add_filter( 'jsm_user_locale_menu_title', 
     'customize_user_locale_menu_title', 10, 2 );
 
-function customize_user_locale_menu_title( $title, $menu_locale ) {
-    return __( 'Select Locale (%s)', 'your_text_domain' );
+function customize_user_locale_menu_title( $menu_title, $menu_locale ) {
+    return __( 'User Locale (%s)', 'your_text_domain' );
 }
 </code></pre>
 

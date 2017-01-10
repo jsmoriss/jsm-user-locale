@@ -17,11 +17,11 @@ Add a quick and easy user locale / language selector in the WordPress admin back
 
 == Description ==
 
-Add a "User Locale" menu item for users in the WordPress admin back-end and front-end toolbar menus.
+Add a user locale drop-down menu item in the WordPress admin back-end admin and front-end toolbar menus.
 
-Allows users to easily change their preferred locale / language setting from the toolbar instead of having to update their WordPress profile page.
+Allows users to easily change their preferred locale / language setting from the toolbar menu instead of having to update their WordPress profile page.
 
-The default WordPress behavior is to apply the user locale / language preference to the back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.
+The default WordPress behavior is to apply the user locale preference to the admin back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.
 
 <blockquote>
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
@@ -81,14 +81,14 @@ To exclude the "User Locale" menu item from the front-end toolbar menu, *and ign
 add_filter( 'jsm_user_locale_front_end', '__return_false' );
 `
 
-To modify the "User Locale" menu title, you can hook the 'jsm_user_locale_menu_title' filter:
+To modify the user locale menu title (default is "%s"), you can hook the 'jsm_user_locale_menu_title' filter:
 
 `
 add_filter( 'jsm_user_locale_menu_title', 
 	'customize_user_locale_menu_title', 10, 2 );
 
-function customize_user_locale_menu_title( $title, $menu_locale ) {
-	return __( 'Select Locale (%s)', 'your_text_domain' );
+function customize_user_locale_menu_title( $menu_title, $menu_locale ) {
+	return __( 'User Locale (%s)', 'your_text_domain' );
 }
 `
 
@@ -106,7 +106,7 @@ function customize_user_locale_redirect_url( $url, $user_locale ) {
 
 == Screenshots ==
 
-01. An example "User Locale" language selector in the WordPress front-end toolbar menu.
+01. An example user locale language selector in the WordPress front-end toolbar menu.
 
 == Changelog ==
 
@@ -127,6 +127,18 @@ Version components: `{major}.{minor}.{bugfix}-{stage}{level}`
 Note that the production stage level can be incremented on occasion for simple text revisions and/or translation updates. See [PHP's version_compare()](http://php.net/manual/en/function.version-compare.php) documentation for additional information on "PHP-standardized" version numbering.
 
 = Changelog / Release Notes =
+
+**Version 1.2.0-dev1 (2017/01/10)**
+
+* *New Features*
+	* Added a dashicon before the user locale menu title (default is dashicon number 326).
+* *Improvements*
+	* Changed the "Toolbar Menu Title" default value from "User Locale (%s)" to "%s".
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added a new 'jsm_user_locale_menu_dashicon' filter.
+	* Added a new 'jsm_user_locale_menu_items' filter.
 
 **Version 1.1.4-1 (2017/01/08)**
 
@@ -154,7 +166,7 @@ Note that the production stage level can be incremented on occasion for simple t
 **Version 1.1.2-1 (2016/12/21)**
 
 * *New Features*
-	* Added Polylang integration - the "User Locale" menu will use the Polylang language URLs if available.
+	* Added Polylang integration - the user locale menu will use the Polylang language URLs if available.
 * *Improvements*
 	* Renamed the "Select Locale" menu title to "User Locale" and included the current locale value.
 * *Bugfixes*
