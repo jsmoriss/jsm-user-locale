@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus. 
  * Requires At Least: 4.7
- * Tested Up To: 4.7
+ * Tested Up To: 4.7.1
  * Version: 1.2.0-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
