@@ -189,7 +189,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = 1.2.0-1 =
 
-(2017/02/10) Added a dashicon before the user locale menu title. Changed the "Toolbar Menu Title" default value from "User Locale (%s)" to "%s".
+(2017/01/10) Added a dashicon before the user locale menu title. Changed the "Toolbar Menu Title" default value from "User Locale (%s)" to "%s".
 
 = 1.1.4-1 =
 
