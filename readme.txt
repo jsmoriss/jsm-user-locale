@@ -5,7 +5,6 @@ Text Domain: jsm-user-locale
 Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
-Donate Link: https://www.paypal.me/jsmoriss
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
