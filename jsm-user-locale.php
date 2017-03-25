@@ -248,14 +248,17 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
-					require_once( ABSPATH.'wp-admin/includes/plugin.php' );	// just in case
+					self::load_textdomain();
+					if ( ! function_exists( 'deactivate_plugins' ) ) {
+						require_once ABSPATH.'wp-admin/includes/plugin.php';
+					}
 					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
-					deactivate_plugins( $plugin );
+					deactivate_plugins( $plugin, true );	// $silent = true
 					wp_die( 
-						sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
-							'jsm-user-locale' ), $plugin_data['Name'], self::$wp_min_version ).'<br/><br/>'.
-						sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
-							'jsm-user-locale' ), $plugin_data['Name'] )
+						'<p>'.sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
+							'jsm-user-locale' ), $plugin_data['Name'], self::$wp_min_version ).'</p>'.
+						'<p>'.sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
+							'jsm-user-locale' ), $plugin_data['Name'] ).'</p>'
 					);
 				}
 			}
@@ -319,7 +322,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				return;
 
 			global $wp_admin_bar;
-			require_once( ABSPATH.'wp-admin/includes/translation-install.php' );
+			require_once ABSPATH.'wp-admin/includes/translation-install.php';
 			$translations = wp_get_available_translations();	// since wp 4.0
 			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
 			$user_locale = get_user_meta( $user_id, 'locale', true );
