@@ -250,7 +250,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				if ( is_plugin_active( $plugin ) ) {
 					self::load_textdomain();
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once ABSPATH.'wp-admin/includes/plugin.php';
+						require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
 					}
 					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
 					deactivate_plugins( $plugin, true );	// $silent = true
@@ -322,7 +322,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				return;
 
 			global $wp_admin_bar;
-			require_once ABSPATH.'wp-admin/includes/translation-install.php';
+			require_once trailingslashit( ABSPATH ).'wp-admin/includes/translation-install.php';
 			$translations = wp_get_available_translations();	// since wp 4.0
 			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
 			$user_locale = get_user_meta( $user_id, 'locale', true );
