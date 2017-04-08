@@ -125,30 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.2.1-1 (2017/03/25)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Minor updates to textdomain translation strings.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.2.0-1 (2017/01/10)**
-
-* *New Features*
-	* Added a dashicon before the user locale menu title (default is the "translation" dashicon number 326).
-* *Improvements*
-	* Changed the "Toolbar Menu Title" default value from "User Locale (%s)" to "%s".
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a new 'jsm_user_locale_menu_dashicon' filter.
-	* Added a new 'jsm_user_locale_menu_items' filter.
-
-**Version 1.1.4-1 (2017/01/08)**
+**Version 1.2.2 (2017/04/08)**
 
 * *New Features*
 	* None
@@ -157,65 +134,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Added a filters.txt file to document the available filter hooks.
-	* Changed the 'jsm_user_locale_menu_title' filter to pass the menu title before sprintf().
-
-**Version 1.1.3-1 (2016/12/23)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added a JSM_User_Locale::check_wp_version() method hooked to 'admin_init'.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.1.2-1 (2016/12/21)**
-
-* *New Features*
-	* Added Polylang integration - the user locale menu will use the Polylang language URLs if available.
-* *Improvements*
-	* Renamed the "Select Locale" menu title to "User Locale" and included the current locale value.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.0.0-1 (2016/12/17)**
-
-* *New Features*
-	* Initial release.
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
+	* Maintenance release - update to version numbering scheme.
+	* Dropped the package number from the production version string.
 
 == Upgrade Notice ==
 
-= 1.2.1-1 =
+= 1.2.2 =
 
-(2017/03/25) Minor updates to textdomain translation strings.
-
-= 1.2.0-1 =
-
-(2017/01/10) Added a dashicon before the user locale menu title. Changed the "Toolbar Menu Title" default value from "User Locale (%s)" to "%s".
-
-= 1.1.4-1 =
-
-(2017/01/08) Added a filters.txt file to document the available filter hooks. Changed the 'jsm_user_locale_menu_title' filter to pass the menu title before sprintf().
-
-= 1.1.3-1 =
-
-(2016/12/23) Added a JSM_User_Locale::check_wp_version() method hooked to 'admin_init'.
-
-= 1.1.2-1 =
-
-(2016/12/21) Added Polylang integration. Renamed the "Select Locale" menu title to "User Locale" and included the current locale value.
-
-= 1.0.0-1 =
-
-(2016/12/17) Initial release.
+(2017/04/08) Maintenance release - update to version numbering scheme.
 
