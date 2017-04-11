@@ -83,27 +83,32 @@
 
 <p>To exclude the user locale menu item from the front-end toolbar menu, <em>and ignore the user locale / language preference in the front-end webpage</em>, add the following filter hook to your functions.php file:</p>
 
-<pre><code>add_filter( 'jsm_user_locale_front_end', '__return_false' );
-</code></pre>
+<p><code>add_filter( 'jsm_user_locale_front_end', '__return_false' );</code></p>
 
 <p>To modify the user locale menu title (default is "%s"), you can hook the 'jsm_user_locale_menu_title' filter:</p>
 
-<pre><code>add_filter( 'jsm_user_locale_menu_title', 
-    'customize_user_locale_menu_title', 10, 2 );
+<p>`<br />
+    add_filter( 'jsm_user_locale_menu_title', 
+        'customize_user_locale_menu_title', 10, 2 );</p>
 
-function customize_user_locale_menu_title( $menu_title, $menu_locale ) {
+<pre><code>function customize_user_locale_menu_title( $menu_title, $menu_locale ) {
     return __( 'User Locale (%s)', 'your_text_domain' );
 }
 </code></pre>
 
+<p>`</p>
+
 <p>You can also modify the URL used to reload the page (after selecting a locale from the menu) by hooking the 'jsm_user_locale_redirect_url' filter.</p>
 
-<pre><code>add_filter( 'jsm_user_locale_redirect_url', 
-    'customize_user_locale_redirect_url', 10, 2 );
+<p>`<br />
+    add_filter( 'jsm_user_locale_redirect_url', 
+        'customize_user_locale_redirect_url', 10, 2 );</p>
 
-function customize_user_locale_redirect_url( $url, $user_locale ) {
+<pre><code>function customize_user_locale_redirect_url( $url, $user_locale ) {
     // modify the redirect url here
     return $url;
 }
 </code></pre>
+
+<p>`</p>
 
