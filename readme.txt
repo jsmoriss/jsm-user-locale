@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
 Requires At Least: 4.7
-Tested Up To: 4.7.3
+Tested Up To: 4.7.4
 Stable Tag: 1.2.2
 
 Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
