@@ -36,7 +36,7 @@ If the Polylang plugin is active, the user locale menu will automatically use th
 
 = Do you use the WPSSO plugin? =
 
-If you're using the [WPSSO (WordPress Social Sharing Optimization)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale Selector (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the addition of a settings page to modify the menu icon, menu title, and enable/disable the user locale menu on the front-end.
+If you're using the [WPSSO (Social Sharing Optimization)](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale Selector (WPSSO UL)](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the addition of a settings page to modify the menu icon, menu title, and enable/disable the user locale menu on the front-end.
 
 == Installation ==
 
