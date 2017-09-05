@@ -309,8 +309,10 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 
 		public static function add_locale_toolbar() {
-			if ( ! $user_id = get_current_user_id() )
+
+			if ( ! $user_id = get_current_user_id() ) {
 				return;
+			}
 
 			global $wp_admin_bar;
 			require_once trailingslashit( ABSPATH ).'wp-admin/includes/translation-install.php';
@@ -318,11 +320,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
 			$user_locale = get_user_meta( $user_id, 'locale', true );
 
-			if ( empty( $user_locale ) )
+			if ( empty( $user_locale ) ) {
 				$user_locale = 'site-default';
+			}
 
 			$menu_locale = $user_locale === 'site-default' ? 
-				__( 'default', 'jsm-user-locale' ) : $user_locale;
+				_x( 'default', 'toolbar menu title', 'jsm-user-locale' ) : $user_locale;
 
 			/*
 			 * Menu Icon and Title
@@ -332,8 +335,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( ! empty( $dashicon ) && $dashicon !== 'none' ) {
 				if ( isset( self::$dashicons[$dashicon] ) ) {		// just in case
 					$menu_icon = '<span class="ab-icon dashicons-'.self::$dashicons[$dashicon].'"></span>';
-				} else $menu_icon = '';
-			} else $menu_icon = '';
+				} else {
+					$menu_icon = '';
+				}
+			} else {
+				$menu_icon = '';
+			}
 
 			$menu_title = apply_filters( 'jsm_user_locale_menu_title', '%s', $menu_locale );
 			$menu_title = sprintf( $menu_title, $menu_locale );
@@ -358,7 +365,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				} elseif ( $locale === 'en_US' ) {
 					$native_name = 'English (United States)';
 				} elseif ( $locale === 'site-default' ) {
-					$native_name = __( 'Default Locale', 'jsm-user-locale' );
+					$native_name = _x( 'Default Locale', 'toolbar menu item', 'jsm-user-locale' );
 				} else {
 					$native_name = $locale;
 				}
@@ -377,8 +384,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 			$menu_items = apply_filters( 'jsm_user_locale_menu_items', $menu_items, $menu_locale );
 
-			foreach ( $menu_items as $menu_item )
+			foreach ( $menu_items as $menu_item ) {
 				$wp_admin_bar->add_node( $menu_item );
+			}
 		}
 
 		private static function get_default_locale() {

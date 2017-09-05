@@ -20,11 +20,13 @@ msgstr ""
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-user-locale.php:325
+#: jsm-user-locale.php:328
+msgctxt "toolbar menu title"
 msgid "default"
 msgstr ""
 
-#: jsm-user-locale.php:361
+#: jsm-user-locale.php:368
+msgctxt "toolbar menu item"
 msgid "Default Locale"
 msgstr ""
 
