@@ -23,7 +23,7 @@
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h4>Power-Users / Developers</h4>
+<h4>Power-users / Developers</h4>
 
 <p>See the plugin <a href="https://wordpress.org/plugins/jsm-user-locale/other_notes/">Other Notes</a> page for information on available filters.</p>
 

@@ -27,7 +27,7 @@ The default WordPress behavior is to apply the user locale preference to the adm
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-= Power-Users / Developers =
+= Power-users / Developers =
 
 See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other_notes/) page for information on available filters.
 
