@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: JSM's User Locale
+ * Plugin Name: JSM's User Locale Selector
  * Text Domain: jsm-user-locale
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/jsm-user-locale/
