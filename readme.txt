@@ -8,9 +8,9 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
-Requires At Least: 4.7
-Tested Up To: 4.8.2
 Requires PHP: 5.3
+Requires At Least: 4.7
+Tested Up To: 4.8.3
 Stable Tag: 1.2.2
 
 Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
