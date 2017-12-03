@@ -414,4 +414,3 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 	JSM_User_Locale::get_instance();
 }
 
-?>
