@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: JSM's User Locale Selector
  * Text Domain: jsm-user-locale
