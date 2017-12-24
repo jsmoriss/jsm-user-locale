@@ -19,9 +19,7 @@
 
 <p>The default WordPress behavior is to apply the user locale preference to the admin back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.</p>
 
-<blockquote>
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
-</blockquote>
 
 <h4>Power-users / Developers</h4>
 
