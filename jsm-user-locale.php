@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: JSM's User Locale Selector
  * Text Domain: jsm-user-locale
@@ -18,10 +17,10 @@
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
- *	{major}		Major structural code changes / re-writes or incompatible API changes.
- *	{minor}		New functionality was added or improved in a backwards-compatible manner.
- *	{bugfix}	Backwards-compatible bug fixes or small improvements.
- *	{stage}.{level}	Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
+ *      {major}		Major structural code changes / re-writes or incompatible API changes.
+ *      {minor}		New functionality was added or improved in a backwards-compatible manner.
+ *      {bugfix}	Backwards-compatible bug fixes or small improvements.
+ *      {stage}.{level}	Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
  *
  * Copyright 2016-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
@@ -283,8 +282,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( $user_locale === 'site-default' )
 				$user_locale = self::get_default_locale();
 
-			/*
-			 * Use Polylang URLs
+			/**
+			 * Use Polylang URLs.
 			 */
 			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
 				$pll_languages = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
@@ -328,8 +327,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$menu_locale = $user_locale === 'site-default' ? 
 				_x( 'default', 'toolbar menu title', 'jsm-user-locale' ) : $user_locale;
 
-			/*
-			 * Menu Icon and Title
+			/**
+			 * Menu icon and title.
 			 */
 			$dashicon = apply_filters( 'jsm_user_locale_menu_dashicon', 326, $menu_locale );
 
@@ -355,8 +354,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				'meta' => false,
 			) );
 
-			/*
-			 * Menu Drop-down Items
+			/**
+			 * Menu drop-down items.
 			 */
 			$menu_items = array();
 			foreach ( $languages as $locale ) {
@@ -392,22 +391,28 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 		private static function get_default_locale() {
 			global $wp_local_package;
-			if ( isset( $wp_local_package ) )
+			if ( isset( $wp_local_package ) ) {
 	      			$locale = $wp_local_package;
-			if ( defined( 'WPLANG' ) )
+			}
+			if ( defined( 'WPLANG' ) ) {
 				$locale = WPLANG;
+			}
 			if ( is_multisite() ) {
-				if ( ( $ms_locale = get_option( 'WPLANG' ) ) === false )
+				if ( ( $ms_locale = get_option( 'WPLANG' ) ) === false ) {
 					$ms_locale = get_site_option( 'WPLANG' );
-				if ( $ms_locale !== false )
+				}
+				if ( $ms_locale !== false ) {
 					$locale = $ms_locale;
+				}
 			} else {
 				$db_locale = get_option( 'WPLANG' );
-				if ( $db_locale !== false )
+				if ( $db_locale !== false ) {
 					$locale = $db_locale;
+				}
 			}
-			if ( empty( $locale ) )
+			if ( empty( $locale ) ) {
 				$locale = 'en_US';      // just in case
+			}
 			return $locale;
 		}
 	}
