@@ -111,7 +111,7 @@ function customize_user_locale_redirect_url( $url, $user_locale ) {
 <h3>Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/jsm-user-locale/)
-* [WordPress.org](https://wordpress.org/plugins/jsm-user-locale/developers/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-user-locale/)
 
 <h3>Version Numbering</h3>
 
