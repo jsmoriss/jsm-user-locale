@@ -333,7 +333,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$dashicon = apply_filters( 'jsm_user_locale_menu_dashicon', 326, $menu_locale );
 
 			if ( ! empty( $dashicon ) && $dashicon !== 'none' ) {
-				if ( isset( self::$dashicons[$dashicon] ) ) {		// just in case
+				if ( isset( self::$dashicons[$dashicon] ) ) {		// Just in case.
 					$menu_icon = '<span class="ab-icon dashicons-' . self::$dashicons[$dashicon] . '"></span>';
 				} else {
 					$menu_icon = '';
@@ -411,7 +411,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				}
 			}
 			if ( empty( $locale ) ) {
-				$locale = 'en_US';      // just in case
+				$locale = 'en_US';      // Just in case.
 			}
 			return $locale;
 		}
