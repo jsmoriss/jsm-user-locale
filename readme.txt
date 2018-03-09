@@ -1,4 +1,4 @@
-=== JSM's User Locale Selector for the WordPress Toolbar (Perfect for Core / Theme / Plugin Translators) ===
+=== JSM's User Locale Selector for the WordPress Toolbar ===
 Plugin Name: JSM's User Locale
 Plugin Slug: jsm-user-locale
 Text Domain: jsm-user-locale
@@ -17,9 +17,9 @@ Add a quick and easy user locale / language selector in the WordPress admin back
 
 == Description ==
 
-<strong>Add a user locale drop-down menu item in the WordPress admin back-end admin and front-end toolbar menus.</strong>
+Add a user locale drop-down menu item in the WordPress admin back-end admin and front-end toolbar menus.
 
-<strong>Perfect for translators or anyone who needs to switch languages quickly and easily</strong> &mdash; allows logged-in users to change their preferred locale / language setting right from the toolbar menu (instead of having to update their WordPress user profile page).
+Perfect for translators or anyone who needs to switch languages quickly and easily &mdash; allows logged-in users to change their preferred locale / language setting right from the toolbar menu (instead of having to update their WordPress user profile page).
 
 The default WordPress behavior is to apply the user locale preference to the admin back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.
 
@@ -35,7 +35,7 @@ If the Polylang plugin is active, the user locale menu will automatically use th
 
 = Do you use the WPSSO Core plugin? =
 
-If you're using the [WPSSO Core](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale Selector](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the addition of a settings page &mdash; allowing you to modify the menu icon, menu title, and enable/disable the user locale menu on the front-end.
+If you're using the [WPSSO Core](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale Selector](https://wordpress.org/plugins/wpsso-user-locale/) extension offers the same functionality, with the addition of a settings page &mdash; allowing you to modify the menu icon, menu title, and enable / disable the user locale menu on front-end webpages.
 
 == Installation ==
 
