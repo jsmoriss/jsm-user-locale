@@ -31,7 +31,7 @@
 
 <h4>Do you use the WPSSO Core plugin?</h4>
 
-<p>If you're using the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core</a> plugin, the <a href="https://wordpress.org/plugins/wpsso-user-locale/">WPSSO User Locale Selector</a> extension offers the same functionality, with the addition of a settings page &mdash; allowing you to modify the menu icon, menu title, and enable / disable the user locale menu on front-end webpages.</p>
+<p>If you're using the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core</a> plugin, the <a href="https://wordpress.org/plugins/wpsso-user-locale/">WPSSO User Locale Selector</a> add-on offers the same functionality, with the addition of a settings page &mdash; allowing you to modify the menu icon, menu title, and enable / disable the user locale menu on front-end webpages.</p>
 
 
 <h2>Installation</h2>
