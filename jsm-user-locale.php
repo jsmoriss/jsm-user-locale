@@ -277,9 +277,11 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$url = remove_query_arg( 'update-user-locale' );
 
 			if ( $user_id = get_current_user_id() ) {
-				if ( $user_locale === 'site-default' )
+				if ( $user_locale === 'site-default' ) {
 					delete_user_meta( $user_id, 'locale' );
-				else update_user_meta( $user_id, 'locale', $user_locale );
+				} else {
+					update_user_meta( $user_id, 'locale', $user_locale );
+				}
 			}
 
 			if ( $user_locale === 'site-default' )
