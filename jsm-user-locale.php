@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 	class JSM_User_Locale {
 
 		private static $instance;
-		private static $wp_min_version = 4.7;
+		private static $wp_min_version = '4.7';
 
 		private static $dashicons = array(
 			100 => 'admin-appearance',
