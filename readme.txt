@@ -63,13 +63,13 @@ If you're using the [WPSSO Core](https://wordpress.org/plugins/wpsso/) plugin, t
 
 == Frequently Asked Questions ==
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 **Developer Filters**
 
@@ -108,12 +108,7 @@ function customize_user_locale_redirect_url( $url, $user_locale ) {
 
 == Changelog ==
 
-<h3>Repositories</h3>
-
-* [GitHub](https://jsmoriss.github.io/jsm-user-locale/)
-* [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-user-locale/)
-
-<h3>Version Numbering</h3>
+<h3 class="top">Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -121,6 +116,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {minor} = New functionality was added or improved in a backwards-compatible manner.
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
+
+<h3>Repositories</h3>
+
+* [GitHub](https://jsmoriss.github.io/jsm-user-locale/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-user-locale/)
 
 <h3>Changelog / Release Notes</h3>
 
