@@ -25,10 +25,6 @@ The default WordPress behavior is to apply the user locale preference to the adm
 
 There are no plugin settings &mdash; simply install and activate the plugin.
 
-= Power-users / Developers =
-
-See the plugin [Other Notes](https://wordpress.org/plugins/jsm-user-locale/other_notes/) page for information on available filters.
-
 = Do you use the Polylang plugin? =
 
 If the Polylang plugin is active, the user locale menu will automatically use the correct Polylang language URLs for the current webpage.
@@ -62,45 +58,6 @@ If you're using the [WPSSO Core](https://wordpress.org/plugins/wpsso/) plugin, t
 1. Click the *Activate Plugin* link.
 
 == Frequently Asked Questions ==
-
-<h3 class="top">Frequently Asked Questions</h3>
-
-* None
-
-== Other Notes ==
-
-<h3 class="top">Additional Documentation</h3>
-
-**Developer Filters**
-
-To exclude the user locale menu item from the front-end toolbar menu, *and ignore the user locale / language preference in the front-end webpage*, add the following filter hook to your functions.php file:
-
-`
-add_filter( 'jsm_user_locale_front_end', '__return_false' );
-`
-
-To modify the user locale menu title (default is "%s"), you can hook the 'jsm_user_locale_menu_title' filter:
-
-`
-add_filter( 'jsm_user_locale_menu_title', 
-	'customize_user_locale_menu_title', 10, 2 );
-
-function customize_user_locale_menu_title( $menu_title, $menu_locale ) {
-	return __( 'User Locale (%s)', 'your_text_domain' );
-}
-`
-
-You can also modify the URL used to reload the page (after selecting a locale from the menu) by hooking the 'jsm_user_locale_redirect_url' filter.
-
-`
-add_filter( 'jsm_user_locale_redirect_url', 
-	'customize_user_locale_redirect_url', 10, 2 );
-
-function customize_user_locale_redirect_url( $url, $user_locale ) {
-	// modify the redirect url here
-	return $url;
-}
-`
 
 == Screenshots ==
 
