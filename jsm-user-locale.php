@@ -34,6 +34,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 	class JSM_User_Locale {
 
 		private static $instance;
+
 		private static $wp_min_version = '4.7';
 
 		private static $dashicons = array(
@@ -218,7 +219,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			if ( $is_admin || $on_front ) {
 
 				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );	// Requires WP v4.7 or better.
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
 				if ( isset( $_GET['update-user-locale'] ) ) {	// A new user locale value has been selected.
@@ -241,15 +242,23 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 
 		public static function check_wp_version() {
+
 			global $wp_version;
+
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
+
 				$plugin = plugin_basename( __FILE__ );
+
 				if ( is_plugin_active( $plugin ) ) {
+
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
 						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 					}
-					$plugin_data = get_plugin_data( __FILE__, false ); // $markup is false
-					deactivate_plugins( $plugin, true ); // $silent is true
+
+					$plugin_data = get_plugin_data( __FILE__, false );
+
+					deactivate_plugins( $plugin, true );
+
 					wp_die( 
 						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
 							'jsm-user-locale' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . '</p>' . 
@@ -261,20 +270,26 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 
 		public static function get_user_locale( $locale ) {
+
 			if ( $user_id = get_current_user_id() )	{
+
 				if ( $user_locale = get_user_meta( $user_id, 'locale', true ) ) {
 					return $user_locale;
 				}
 			}
+
 			return $locale;
 		}
 
 		public static function update_user_locale() {
+
 			$is_admin = is_admin();
 
 			if ( isset( $_GET['update-user-locale'] ) ) {
 				$user_locale = sanitize_text_field( $_GET['update-user-locale'] );
-			} else return;
+			} else {
+				return;
+			}
 
 			$url = remove_query_arg( 'update-user-locale' );
 
@@ -293,21 +308,29 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			 * Use Polylang URLs.
 			 */
 			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
-				$pll_languages = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
+
+				$pll_languages  = pll_the_languages( array( 'echo' => 0, 'raw' => 1 ) );
 				$pll_def_locale = pll_default_language( 'locale' );
-				$pll_urls = array();	// associative array of locales and their url
+				$pll_urls       = array();	// Associative array of locales and their url.
 
 				foreach ( $pll_languages as $pll_lang ) {
+
 					if ( ! empty( $pll_lang['locale'] ) && ! empty( $pll_lang['url'] ) ) {
+
 						$pll_locale = str_replace( '-', '_', $pll_lang['locale'] );	// wp compatibility
+
 						$pll_urls[$pll_locale] = $pll_lang['url'];
 					}
 				}
 
-				if ( isset( $pll_urls[$user_locale] ) )
+				if ( isset( $pll_urls[$user_locale] ) ) {
+
 					$url = $pll_urls[$user_locale];
-				elseif ( isset( $pll_urls[$pll_def_locale] ) )
+
+				} elseif ( isset( $pll_urls[$pll_def_locale] ) ) {
+
 					$url = $pll_urls[$pll_def_locale];
+				}
 			}
 
 			wp_redirect( apply_filters( 'jsm_user_locale_redirect_url', $url, $user_locale ) );
@@ -322,10 +345,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 
 			global $wp_admin_bar;
+
 			require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/translation-install.php';
-			$translations = wp_get_available_translations();	// since wp 4.0
-			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// since wp 3.0
-			$user_locale = get_user_meta( $user_id, 'locale', true );
+
+			$translations = wp_get_available_translations();
+			$languages    = array_merge( array( 'site-default' ), get_available_languages() );
+			$user_locale  = get_user_meta( $user_id, 'locale', true );
 
 			if ( empty( $user_locale ) ) {
 				$user_locale = 'site-default';
@@ -353,42 +378,56 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$menu_title = sprintf( $menu_title, $menu_locale );
 
 			$wp_admin_bar->add_node( array(	// since wp 3.1
-				'id' => 'jsm-user-locale',
-				'title' => $menu_icon . $menu_title,
+				'id'     => 'jsm-user-locale',
+				'title'  => $menu_icon . $menu_title,
 				'parent' => false,
-				'href' => false,
-				'group' => false,
-				'meta' => false,
+				'href'   => false,
+				'group'  => false,
+				'meta'   => false,
 			) );
 
 			/**
 			 * Menu drop-down items.
 			 */
 			$menu_items = array();
+
 			foreach ( $languages as $locale ) {
+
 				$meta = array();
+
 				if ( isset( $translations[$locale]['native_name'] ) ) {
+
 					$native_name = $translations[$locale]['native_name'];
+
 				} elseif ( $locale === 'en_US' ) {
+
 					$native_name = 'English (United States)';
+
 				} elseif ( $locale === 'site-default' ) {
+
 					$native_name = _x( 'Default Locale', 'toolbar menu item', 'jsm-user-locale' );
+
 				} else {
 					$native_name = $locale;
 				}
+
 				if ( $locale === $user_locale ) {
+
 					$native_name = '<strong>' . $native_name . '</strong>';
+
 					$meta['class'] = 'current_locale';
 				}
-				$wp_admin_bar->add_node( array(	// since wp 3.1
-					'id' => 'jsm-user-locale-' . $locale,
-					'title' => $native_name,
+
+				$wp_admin_bar->add_node( array(
+					'id'     => 'jsm-user-locale-' . $locale,
+					'title'  => $native_name,
 					'parent' => 'jsm-user-locale',
-					'href' => add_query_arg( 'update-user-locale', rawurlencode( $locale ) ),
-					'group' => false,
-					'meta' => $meta,
+					'href'   => add_query_arg( 'update-user-locale', rawurlencode( $locale ) ),
+					'group'  => false,
+					'meta'   => $meta,
 				) );
 			}
+
 			$menu_items = apply_filters( 'jsm_user_locale_menu_items', $menu_items, $menu_locale );
 
 			foreach ( $menu_items as $menu_item ) {
@@ -397,29 +436,40 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 
 		private static function get_default_locale() {
+
 			global $wp_local_package;
+
 			if ( isset( $wp_local_package ) ) {
 	      			$locale = $wp_local_package;
 			}
+
 			if ( defined( 'WPLANG' ) ) {
 				$locale = WPLANG;
 			}
+
 			if ( is_multisite() ) {
+
 				if ( ( $ms_locale = get_option( 'WPLANG' ) ) === false ) {
 					$ms_locale = get_site_option( 'WPLANG' );
 				}
+
 				if ( $ms_locale !== false ) {
 					$locale = $ms_locale;
 				}
+
 			} else {
+
 				$db_locale = get_option( 'WPLANG' );
+
 				if ( $db_locale !== false ) {
 					$locale = $db_locale;
 				}
 			}
+
 			if ( empty( $locale ) ) {
 				$locale = 'en_US';      // Just in case.
 			}
+
 			return $locale;
 		}
 	}

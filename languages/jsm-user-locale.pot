@@ -12,20 +12,20 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-user-locale.php:254
+#: jsm-user-locale.php:263
 msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr ""
 
-#: jsm-user-locale.php:256
+#: jsm-user-locale.php:265
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-user-locale.php:335
+#: jsm-user-locale.php:360
 msgctxt "toolbar menu title"
 msgid "default"
 msgstr ""
 
-#: jsm-user-locale.php:375
+#: jsm-user-locale.php:408
 msgctxt "toolbar menu item"
 msgid "Default Locale"
 msgstr ""
