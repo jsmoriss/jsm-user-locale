@@ -415,7 +415,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 					$native_name = '<strong>' . $native_name . '</strong>';
 
-					$meta['class'] = 'current_locale';
+					$meta[ 'class' ] = 'current_locale';
 				}
 
 				$wp_admin_bar->add_node( array(
