@@ -453,7 +453,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 					$ms_locale = get_site_option( 'WPLANG' );
 				}
 
-				if ( $ms_locale !== false ) {
+				if ( false !== $ms_locale ) {
 					$locale = $ms_locale;
 				}
 
@@ -461,7 +461,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				$db_locale = get_option( 'WPLANG' );
 
-				if ( $db_locale !== false ) {
+				if ( false !== $db_locale ) {
 					$locale = $db_locale;
 				}
 			}
