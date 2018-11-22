@@ -315,9 +315,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				foreach ( $pll_languages as $pll_lang ) {
 
-					if ( ! empty( $pll_lang['locale'] ) && ! empty( $pll_lang[ 'url' ] ) ) {
+					if ( ! empty( $pll_lang[ 'locale' ] ) && ! empty( $pll_lang[ 'url' ] ) ) {
 
-						$pll_locale = str_replace( '-', '_', $pll_lang['locale'] );	// wp compatibility
+						$pll_locale = str_replace( '-', '_', $pll_lang[ 'locale' ] );	// wp compatibility
 
 						$pll_urls[$pll_locale] = $pll_lang[ 'url' ];
 					}
