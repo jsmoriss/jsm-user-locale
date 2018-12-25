@@ -25,7 +25,7 @@ msgctxt "toolbar menu title"
 msgid "default"
 msgstr ""
 
-#: jsm-user-locale.php:408
+#: jsm-user-locale.php:409
 msgctxt "toolbar menu item"
 msgid "Default Locale"
 msgstr ""

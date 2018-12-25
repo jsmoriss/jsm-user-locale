@@ -348,8 +348,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/translation-install.php';
 
-			$translations = wp_get_available_translations();
-			$languages    = array_merge( array( 'site-default' ), get_available_languages() );
+			$translations = wp_get_available_translations();	// Since WP v4.0.
+			$languages    = array_merge( array( 'site-default' ), get_available_languages() );	// Since WP v3.0.
 			$user_locale  = get_user_meta( $user_id, 'locale', true );
 
 			if ( empty( $user_locale ) ) {
@@ -365,6 +365,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$dashicon = apply_filters( 'jsm_user_locale_menu_dashicon', 326, $menu_locale );
 
 			if ( ! empty( $dashicon ) && $dashicon !== 'none' ) {
+
 				if ( isset( self::$dashicons[$dashicon] ) ) {		// Just in case.
 					$menu_icon = '<span class="ab-icon dashicons-' . self::$dashicons[$dashicon] . '"></span>';
 				} else {
@@ -377,7 +378,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$menu_title = apply_filters( 'jsm_user_locale_menu_title', '%s', $menu_locale );
 			$menu_title = sprintf( $menu_title, $menu_locale );
 
-			$wp_admin_bar->add_node( array(	// since wp 3.1
+			$wp_admin_bar->add_node( array(	// Since WP v3.1.
 				'id'     => 'jsm-user-locale',
 				'title'  => $menu_icon . $menu_title,
 				'parent' => false,
