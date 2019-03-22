@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
-Requires PHP: 5.5
+Requires PHP: 5.6
 Requires At Least: 4.7
 Tested Up To: 5.1
 Stable Tag: 1.2.2
