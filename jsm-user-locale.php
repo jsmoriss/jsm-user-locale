@@ -319,17 +319,17 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 						$pll_locale = str_replace( '-', '_', $pll_lang[ 'locale' ] );	// wp compatibility
 
-						$pll_urls[$pll_locale] = $pll_lang[ 'url' ];
+						$pll_urls[ $pll_locale ] = $pll_lang[ 'url' ];
 					}
 				}
 
-				if ( isset( $pll_urls[$user_locale] ) ) {
+				if ( isset( $pll_urls[ $user_locale ] ) ) {
 
-					$url = $pll_urls[$user_locale];
+					$url = $pll_urls[ $user_locale ];
 
-				} elseif ( isset( $pll_urls[$pll_def_locale] ) ) {
+				} elseif ( isset( $pll_urls[ $pll_def_locale ] ) ) {
 
-					$url = $pll_urls[$pll_def_locale];
+					$url = $pll_urls[ $pll_def_locale ];
 				}
 			}
 
@@ -366,8 +366,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( ! empty( $dashicon ) && $dashicon !== 'none' ) {
 
-				if ( isset( self::$dashicons[$dashicon] ) ) {		// Just in case.
-					$menu_icon = '<span class="ab-icon dashicons-' . self::$dashicons[$dashicon] . '"></span>';
+				if ( isset( self::$dashicons[ $dashicon ] ) ) {		// Just in case.
+					$menu_icon = '<span class="ab-icon dashicons-' . self::$dashicons[ $dashicon ] . '"></span>';
 				} else {
 					$menu_icon = '';
 				}
@@ -396,9 +396,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				$meta = array();
 
-				if ( isset( $translations[$locale]['native_name'] ) ) {
+				if ( isset( $translations[ $locale ][ 'native_name' ] ) ) {
 
-					$native_name = $translations[$locale]['native_name'];
+					$native_name = $translations[ $locale ][ 'native_name' ];
 
 				} elseif ( $locale === 'en_US' ) {
 
