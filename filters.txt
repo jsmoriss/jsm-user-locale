@@ -1,0 +1,11 @@
+
+'jsm_user_locale_front_end' ( true );
+
+'jsm_user_locale_redirect_url' ( $url, $user_locale );
+
+'jsm_user_locale_menu_dashicon' ( 336, $menu_locale );
+
+'jsm_user_locale_menu_title' ( '%s', $menu_locale );
+
+'jsm_user_locale_menu_items' ( array $menu_items, $menu_locale );
+
