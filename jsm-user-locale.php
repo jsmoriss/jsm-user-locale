@@ -12,7 +12,7 @@
  * Description: Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus. 
  * Requires PHP: 5.6
  * Requires At Least: 4.7
- * Tested Up To: 5.2.2
+ * Tested Up To: 5.2.3
  * Version: 1.2.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
@@ -255,9 +255,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 					}
 
-					$plugin_data = get_plugin_data( __FILE__, false );
+					$plugin_data = get_plugin_data( __FILE__, $markup = false );
 
-					deactivate_plugins( $plugin, true );
+					deactivate_plugins( $plugin, $silent = true );
 
 					wp_die( 
 						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
