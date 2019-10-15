@@ -378,7 +378,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$menu_title = apply_filters( 'jsm_user_locale_menu_title', '%s', $menu_locale );
 			$menu_title = sprintf( $menu_title, $menu_locale );
 
-			$wp_admin_bar->add_node( array(	// Since WP v3.1.
+			$wp_admin_bar->add_node( array(
 				'id'     => 'jsm-user-locale',
 				'title'  => $menu_icon . $menu_title,
 				'parent' => false,
