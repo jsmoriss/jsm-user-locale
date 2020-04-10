@@ -348,7 +348,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/translation-install.php';
 
-			$translations = wp_get_available_translations();	// Since WP v4.0.
+			$translations = wp_get_available_translations();					// Since WP v4.0.
 			$languages    = array_merge( array( 'site-default' ), get_available_languages() );	// Since WP v3.0.
 			$user_locale  = get_user_meta( $user_id, 'locale', true );
 
