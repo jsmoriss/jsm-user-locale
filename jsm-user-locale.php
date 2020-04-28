@@ -220,12 +220,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( $is_admin || $on_front ) {
 
-				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-
 				/**
 				 * Check for the minimum required WordPress version.
 				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+
+				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
 
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
@@ -245,19 +245,18 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			return self::$instance;
 		}
 
-		public static function load_textdomain() {
-
-			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
-		}
-
 		/**
 		 * Check for the minimum required WordPress version.
+		 *
+		 * If we don't have the minimum required version, then de-activate ourselves and die.
 		 */
 		public static function check_wp_version() {
 
 			global $wp_version;
 
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
+
+				self::init_textdomain();	// If not already loaded, load the textdomain now.
 
 				$plugin = plugin_basename( __FILE__ );
 
@@ -274,6 +273,19 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 						sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
 							'jsm-user-locale' ), 'WordPress', $plugin_data['Name'] ) . '</p>' );
 			}
+		}
+
+		public static function load_textdomain() {
+
+			static $do_once = null;
+
+			if ( null !== $do_once ) {	// Already loaded.
+				return;
+			}
+
+			$do_once = true;
+
+			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 		}
 
 		public static function get_user_locale( $locale ) {
