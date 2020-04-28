@@ -210,19 +210,27 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		public function __construct() {
 
 			$is_admin = is_admin();
+
 			$on_front = apply_filters( 'jsm_user_locale_front_end', true );
 
 			if ( ! $is_admin && $on_front ) {	// Apply user locale value to front-end.
+
 				add_filter( 'locale', array( __CLASS__, 'get_user_locale' ) );
 			}
 
 			if ( $is_admin || $on_front ) {
 
 				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+
+				/**
+				 * Check for the minimum required WordPress version.
+				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
 				if ( isset( $_GET['update-user-locale'] ) ) {	// A new user locale value has been selected.
+
 					add_action( 'init', array( __CLASS__, 'update_user_locale' ), -100 );
 				}
 			}
@@ -238,9 +246,13 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 
 		public static function load_textdomain() {
+
 			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 		}
 
+		/**
+		 * Check for the minimum required WordPress version.
+		 */
 		public static function check_wp_version() {
 
 			global $wp_version;
@@ -249,23 +261,18 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				$plugin = plugin_basename( __FILE__ );
 
-				if ( is_plugin_active( $plugin ) ) {
-
-					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
-					}
-
-					$plugin_data = get_plugin_data( __FILE__, $markup = false );
-
-					deactivate_plugins( $plugin, $silent = true );
-
-					wp_die( 
-						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-							'jsm-user-locale' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . '</p>' . 
-						'<p>' . sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-							'jsm-user-locale' ), 'WordPress', $plugin_data['Name'] ) . '</p>'
-					);
+				if ( ! function_exists( 'deactivate_plugins' ) ) {
+					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
+
+				$plugin_data = get_plugin_data( __FILE__, $markup = false );
+
+				deactivate_plugins( $plugin, $silent = true );
+
+				wp_die( '<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
+					'jsm-user-locale' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . ' ' . 
+						sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+							'jsm-user-locale' ), 'WordPress', $plugin_data['Name'] ) . '</p>' );
 			}
 		}
 
