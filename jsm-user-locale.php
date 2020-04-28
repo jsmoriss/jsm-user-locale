@@ -225,7 +225,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 
-				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+				add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
@@ -275,15 +275,15 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 		}
 
-		public static function load_textdomain() {
+		public static function init_textdomain() {
 
-			static $do_once = null;
+			static $loaded = null;
 
-			if ( null !== $do_once ) {	// Already loaded.
+			if ( null !== $loaded ) {
 				return;
 			}
 
-			$do_once = true;
+			$loaded = true;
 
 			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 		}
