@@ -33,7 +33,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 	class JSM_User_Locale {
 
-		private static $instance;
+		private static $instance = null;
 
 		private static $wp_min_version = '4.7';
 
@@ -238,7 +238,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 		public static function &get_instance() {
 
-			if ( ! isset( self::$instance ) ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self;
 			}
 
