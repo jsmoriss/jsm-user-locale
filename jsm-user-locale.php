@@ -223,7 +223,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				/**
 				 * Check for the minimum required WordPress version.
 				 */
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_min_version' ) );
 
 				add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
@@ -250,7 +250,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		 *
 		 * If we don't have the minimum required version, then de-activate ourselves and die.
 		 */
-		public static function check_wp_version() {
+		public static function check_wp_min_version() {
 
 			global $wp_version;
 
