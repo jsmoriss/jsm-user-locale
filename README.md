@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s User Locale</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.2.2</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.3.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.6 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.7 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.4.1</td></tr>

@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.7
 Tested Up To: 5.4.1
-Stable Tag: 1.2.2
+Stable Tag: 1.3.0
 
 Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
 
@@ -81,7 +81,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.2.2 (2017/04/08)**
+**Version 1.3.0 (2020/05/08)**
 
 * **New Features**
 	* None.
@@ -90,11 +90,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Maintenance release.
+	* Maintenance release - minor code formatting changes.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.7.
 
 == Upgrade Notice ==
 
-= 1.2.2 =
+= 1.3.0 =
 
-(2017/04/08) Maintenance release.
+(2020/05/08) Maintenance release - minor code formatting changes.
 
