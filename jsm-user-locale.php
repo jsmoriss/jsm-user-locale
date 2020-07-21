@@ -298,7 +298,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( $user_id = get_current_user_id() )	{
 
-				if ( $user_locale = get_user_meta( $user_id, 'locale', true ) ) {
+				if ( $user_locale = get_user_meta( $user_id, 'locale', $single = true ) ) {
 
 					return $user_locale;
 				}
@@ -387,7 +387,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// Since WP v3.0.
 
-			$user_locale = get_user_meta( $user_id, 'locale', true );
+			$user_locale = get_user_meta( $user_id, 'locale', $single = true );
 
 			if ( empty( $user_locale ) ) {
 
