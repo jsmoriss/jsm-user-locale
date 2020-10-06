@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.7
  * Tested Up To: 5.5.1
- * Version: 1.3.0
+ * Version: 1.4.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -225,7 +225,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_min_version' ) );
 
-				add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
+				add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
 				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
 
@@ -244,6 +244,20 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 
 			return self::$instance;
+		}
+
+		public function init_textdomain() {
+
+			static $local_cache = null;
+
+			if ( null === $local_cache ) {
+
+				$local_cache = 'jsm-user-locale';
+
+				load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
+			}
+
+			return $local_cache;
 		}
 
 		/**
@@ -279,19 +293,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', self::$wp_min_version ) . ' ' . 
 					 sprintf( $notice_upgrade_transl, 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
 			}
-		}
-
-		public static function init_textdomain() {
-
-			static $loaded = null;
-
-			if ( null !== $loaded ) {
-				return;
-			}
-
-			$loaded = true;
-
-			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 		}
 
 		public static function get_user_locale( $locale ) {
