@@ -34,11 +34,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 	class JSM_User_Locale {
 
-		private static $instance = null;
+		private $wp_min_version = '4.7';
 
-		private static $wp_min_version = '4.7';
-
-		private static $dashicons = array(
+		private $dashicons = array(
 			100 => 'admin-appearance',
 			101 => 'admin-comments',
 			102 => 'admin-home',
@@ -208,6 +206,8 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			473 => 'testimonial',
 		);
 
+		private static $instance = null;
+
 		public function __construct() {
 
 			$is_admin = is_admin();
@@ -216,7 +216,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( ! $is_admin && $on_front ) {	// Apply user locale value to front-end.
 
-				add_filter( 'locale', array( __CLASS__, 'get_user_locale' ) );
+				add_filter( 'locale', array( $this, 'get_user_locale' ) );
 			}
 
 			if ( $is_admin || $on_front ) {
@@ -224,15 +224,15 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				/**
 				 * Check for the minimum required WordPress version.
 				 */
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_min_version' ) );
+				add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
 
 				add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
-				add_action( 'wp_before_admin_bar_render', array( __CLASS__, 'add_locale_toolbar' ) );
+				add_action( 'wp_before_admin_bar_render', array( $this, 'add_locale_toolbar' ) );
 
 				if ( isset( $_GET['update-user-locale'] ) ) {	// A new user locale value has been selected.
 
-					add_action( 'init', array( __CLASS__, 'update_user_locale' ), -100 );
+					add_action( 'init', array( $this, 'update_user_locale' ), -100 );
 				}
 			}
 		}
@@ -266,13 +266,13 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		 *
 		 * If we don't have the minimum required version, then de-activate ourselves and die.
 		 */
-		public static function check_wp_min_version() {
+		public function check_wp_min_version() {
 
 			global $wp_version;
 
-			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
+			if ( version_compare( $wp_version, $this->wp_min_version, '<' ) ) {
 
-				self::init_textdomain();	// If not already loaded, load the textdomain now.
+				$this->init_textdomain();	// If not already loaded, load the textdomain now.
 
 				$plugin = plugin_basename( __FILE__ );
 
@@ -291,12 +291,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				deactivate_plugins( $plugin, $silent = true );
 
-				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', self::$wp_min_version ) . ' ' . 
+				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', $this->wp_min_version ) . ' ' . 
 					 sprintf( $notice_upgrade_transl, 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
 			}
 		}
 
-		public static function get_user_locale( $locale ) {
+		public function get_user_locale( $locale ) {
 
 			if ( $user_id = get_current_user_id() )	{
 
@@ -309,7 +309,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			return $locale;
 		}
 
-		public static function update_user_locale() {
+		public function update_user_locale() {
 
 			$is_admin = is_admin();
 
@@ -338,7 +338,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( $user_locale === 'site-default' )
 
-				$user_locale = self::get_default_locale();
+				$user_locale = $this->get_default_locale();
 
 			/**
 			 * Use Polylang URLs.
@@ -374,7 +374,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			exit;
 		}
 
-		public static function add_locale_toolbar() {
+		public function add_locale_toolbar() {
 
 			if ( ! $user_id = get_current_user_id() ) {
 
@@ -406,9 +406,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( ! empty( $dashicon ) && $dashicon !== 'none' ) {
 
-				if ( isset( self::$dashicons[ $dashicon ] ) ) {		// Just in case.
+				if ( isset( $this->dashicons[ $dashicon ] ) ) {		// Just in case.
 
-					$menu_icon = '<span class="ab-icon dashicons-' . self::$dashicons[ $dashicon ] . '"></span>';
+					$menu_icon = '<span class="ab-icon dashicons-' . $this->dashicons[ $dashicon ] . '"></span>';
 
 				} else {
 
@@ -483,7 +483,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 		}
 
-		private static function get_default_locale() {
+		private function get_default_locale() {
 
 			global $wp_local_package;
 
