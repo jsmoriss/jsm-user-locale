@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.7
  * Tested Up To: 5.5.1
- * Version: 1.4.0-dev.1
+ * Version: 1.4.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -26,6 +26,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
