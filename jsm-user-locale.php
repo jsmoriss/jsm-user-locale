@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.7
  * Tested Up To: 5.5.1
- * Version: 1.4.0
+ * Version: 2.0.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -210,30 +210,12 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 		public function __construct() {
 
-			$is_admin = is_admin();
+			$doing_ajax = defined( 'DOING_AJAX' ) ? DOING_AJAX : false;
+			$doing_cron = defined( 'DOING_CRON' ) ? DOING_CRON : false;
 
-			$on_front = apply_filters( 'jsm_user_locale_front_end', true );
-
-			if ( ! $is_admin && $on_front ) {	// Apply user locale value to front-end.
-
-				add_filter( 'locale', array( $this, 'get_user_locale' ) );
-			}
-
-			if ( $is_admin || $on_front ) {
-
-				/**
-				 * Check for the minimum required WordPress version.
-				 */
-				add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
-
-				add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
-
-				add_action( 'wp_before_admin_bar_render', array( $this, 'add_locale_toolbar' ) );
-
-				if ( isset( $_GET['update-user-locale'] ) ) {	// A new user locale value has been selected.
-
-					add_action( 'init', array( $this, 'update_user_locale' ), -100 );
-				}
+			if ( ! $doing_ajax && ! $doing_cron ) {
+			
+				add_action( 'init', array( $this, 'init_plugin' ), -1000, 0 );
 			}
 		}
 
@@ -247,18 +229,42 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			return self::$instance;
 		}
 
+		public function init_plugin() {
+
+			$is_admin = is_admin();
+			$user_id  = get_current_user_id();
+			$on_front = apply_filters( 'jsm_user_locale_front_end', true );
+
+			if ( $user_id ) {
+
+				if ( ! $is_admin && $on_front ) {	// Apply user locale value to front-end.
+
+					$locale      = get_locale();
+					$user_locale = get_user_meta( $user_id, 'locale', $single = true );
+
+					if ( $locale !== $user_locale ) {
+
+						switch_to_locale( $user_locale );
+					}
+				}
+
+				if ( $is_admin || $on_front ) {
+
+					add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
+					add_action( 'admin_bar_menu', array( $this, 'add_locale_toolbar' ), 60, 1 );
+					add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
+
+					if ( isset( $_GET[ 'update-user-locale' ] ) ) {
+
+						add_action( 'init', array( $this, 'update_user_locale' ), -10, 0 );
+					}
+				}
+			}
+		}
+
 		public function init_textdomain() {
 
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache = 'jsm-user-locale';
-
-				load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
-			}
-
-			return $local_cache;
+			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
 		}
 
 		/**
@@ -296,19 +302,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 		}
 
-		public function get_user_locale( $locale ) {
-
-			if ( $user_id = get_current_user_id() )	{
-
-				if ( $user_locale = get_user_meta( $user_id, 'locale', $single = true ) ) {
-
-					return $user_locale;
-				}
-			}
-
-			return $locale;
-		}
-
 		public function update_user_locale() {
 
 			$is_admin = is_admin();
@@ -326,7 +319,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 			if ( $user_id = get_current_user_id() ) {
 
-				if ( $user_locale === 'site-default' ) {
+				if ( 'site-default' === $user_locale ) {
 
 					delete_user_meta( $user_id, 'locale' );
 
@@ -336,9 +329,10 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				}
 			}
 
-			if ( $user_locale === 'site-default' )
+			if ( 'site-default' === $user_locale ) {
 
 				$user_locale = $this->get_default_locale();
+			}
 
 			/**
 			 * Use Polylang URLs.
@@ -374,30 +368,25 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			exit;
 		}
 
-		public function add_locale_toolbar() {
+		public function add_locale_toolbar( $wp_admin_bar ) {
 
-			if ( ! $user_id = get_current_user_id() ) {
+			if ( ! $user_id = get_current_user_id() ) {	// Just in case.
 
 				return;
 			}
 
-			global $wp_admin_bar;
-
 			require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/translation-install.php';
 
 			$translations = wp_get_available_translations();	// Since WP v4.0.
-
-			$languages = array_merge( array( 'site-default' ), get_available_languages() );	// Since WP v3.0.
-
-			$user_locale = get_user_meta( $user_id, 'locale', $single = true );
+			$languages    = array_merge( array( 'site-default' ), get_available_languages() );	// Since WP v3.0.
+			$user_locale  = get_user_meta( $user_id, 'locale', $single = true );
 
 			if ( empty( $user_locale ) ) {
 
 				$user_locale = 'site-default';
 			}
 
-			$menu_locale = $user_locale === 'site-default' ? 
-				_x( 'default', 'toolbar menu title', 'jsm-user-locale' ) : $user_locale;
+			$menu_locale = 'site-default' === $user_locale ? _x( 'default', 'toolbar menu title', 'jsm-user-locale' ) : $user_locale;
 
 			/**
 			 * Menu icon and title.
@@ -421,7 +410,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			}
 
 			$menu_title = apply_filters( 'jsm_user_locale_menu_title', '%s', $menu_locale );
-
 			$menu_title = sprintf( $menu_title, $menu_locale );
 
 			$wp_admin_bar->add_node( array(
@@ -446,15 +434,16 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 					$native_name = $translations[ $locale ][ 'native_name' ];
 
-				} elseif ( $locale === 'en_US' ) {
+				} elseif ( 'en_US' === $locale ) {
 
 					$native_name = 'English (United States)';
 
-				} elseif ( $locale === 'site-default' ) {
+				} elseif ( 'site-default' === $locale ) {
 
 					$native_name = _x( 'Default Locale', 'toolbar menu item', 'jsm-user-locale' );
 
 				} else {
+
 					$native_name = $locale;
 				}
 
