@@ -231,13 +231,13 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 		public function init_plugin() {
 
-			$is_admin = is_admin();
-			$user_id  = get_current_user_id();
-			$on_front = apply_filters( 'jsm_user_locale_front_end', true );
+			$is_admin      = is_admin();
+			$user_id       = get_current_user_id();
+			$show_on_front = apply_filters( 'jsm_user_locale_front_end', true );
 
 			if ( $user_id ) {
 
-				if ( ! $is_admin && $on_front ) {	// Apply user locale value to front-end.
+				if ( ! $is_admin && $show_on_front ) {	// Apply user locale value to front-end.
 
 					$locale      = get_locale();
 					$user_locale = get_user_meta( $user_id, 'locale', $single = true );
@@ -248,7 +248,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 					}
 				}
 
-				if ( $is_admin || $on_front ) {
+				if ( $is_admin || $show_on_front ) {
 
 					add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
 					add_action( 'admin_bar_menu', array( $this, 'add_locale_toolbar' ), 60, 1 );
