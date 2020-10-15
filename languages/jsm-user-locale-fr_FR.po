@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's User Locale 1.4.0\n"
+"Project-Id-Version: JSM's User Locale 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
-"POT-Creation-Date: 2020-10-07 16:16-0700\n"
-"PO-Revision-Date: 2020-10-07 16:16-0700\n"
+"POT-Creation-Date: 2020-10-15 12:23-0700\n"
+"PO-Revision-Date: 2020-10-15 12:23-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,20 +14,20 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: jsm-user-locale.php:286
+#: jsm-user-locale.php:292
 msgid "The %1$s plugin requires %2$s version %3$s or newer and has been deactivated."
 msgstr "L'extension %1$s nécessite %2$s version %3$s ou plus récente et a été désactivée."
 
-#: jsm-user-locale.php:289
+#: jsm-user-locale.php:295
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr "Veuillez mettre à jour %1$s avant d'essayer de réactiver l'extension %2$s."
 
-#: jsm-user-locale.php:400
+#: jsm-user-locale.php:389
 msgctxt "toolbar menu title"
 msgid "default"
 msgstr "défaut"
 
-#: jsm-user-locale.php:455
+#: jsm-user-locale.php:443
 msgctxt "toolbar menu item"
 msgid "Default Locale"
 msgstr "Langue par défaut"
