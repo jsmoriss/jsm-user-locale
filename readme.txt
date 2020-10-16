@@ -81,7 +81,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0 (2020/10/15)**
+**Version 2.0.0 (2020/10/16)**
 
 Maintenance release.
 
@@ -101,5 +101,5 @@ Maintenance release.
 
 = 2.0.0 =
 
-(2020/10/15) Added a call to switch_to_locale() on the front-end.
+(2020/10/16) Added a call to switch_to_locale() on the front-end.
 
