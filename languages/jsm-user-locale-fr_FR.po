@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's User Locale 2.0.0\n"
+"Project-Id-Version: JSM's Simple User Locale Selector 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
-"POT-Creation-Date: 2020-10-15 12:23-0700\n"
-"PO-Revision-Date: 2020-10-15 12:23-0700\n"
+"POT-Creation-Date: 2020-10-17 09:13-0700\n"
+"PO-Revision-Date: 2020-10-17 09:14-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -33,8 +33,8 @@ msgid "Default Locale"
 msgstr "Langue par défaut"
 
 #. Plugin Name of the plugin/theme
-msgid "JSM's User Locale Selector"
-msgstr "JSM's User Locale Selector"
+msgid "JSM's Simple User Locale Selector"
+msgstr "Sélecteur de langue utilisateur simple de JSM"
 
 #. Plugin URI of the plugin/theme
 msgid "https://surniaulula.com/extend/plugins/jsm-user-locale/"
