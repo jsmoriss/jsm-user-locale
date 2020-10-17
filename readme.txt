@@ -1,5 +1,5 @@
-=== JSM's User Locale Selector for the WordPress Toolbar ===
-Plugin Name: JSM's User Locale
+=== JSM's Simple User Locale Selector ===
+Plugin Name: JSM's Simple User Locale Selector
 Plugin Slug: jsm-user-locale
 Text Domain: jsm-user-locale
 Domain Path: /languages
