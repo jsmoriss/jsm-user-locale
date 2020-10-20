@@ -214,7 +214,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			$doing_cron = defined( 'DOING_CRON' ) ? DOING_CRON : false;
 
 			if ( ! $doing_ajax && ! $doing_cron ) {
-			
+
 				add_action( 'init', array( $this, 'init_plugin' ), -1000, 0 );
 			}
 		}
