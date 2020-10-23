@@ -206,7 +206,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			473 => 'testimonial',
 		);
 
-		private static $instance = null;
+		private static $instance = null;	// JSM_User_Locale class object.
 
 		public function __construct() {
 
