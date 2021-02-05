@@ -29,9 +29,9 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 If the Polylang plugin is active, the user locale menu will automatically use the correct Polylang language URLs for the current webpage.
 
-= Do you use the WPSSO Core plugin? =
+= Need a Boost to your Social and Search Ranking? =
 
-If you're using the [WPSSO Core](https://wordpress.org/plugins/wpsso/) plugin, the [WPSSO User Locale Selector](https://wordpress.org/plugins/wpsso-user-locale/) add-on offers the same functionality, with the addition of a settings page &mdash; allowing you to modify the menu icon, menu title, and enable / disable the user locale menu on front-end webpages.
+Check out [the WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) to present your content at its best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
