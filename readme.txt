@@ -19,11 +19,11 @@ Add a quick and easy user locale / language selector in the WordPress admin back
 
 Add a user locale drop-down menu item in the WordPress admin back-end admin and front-end toolbar menus.
 
-Perfect for anyone that needs to switch languages quickly and easily &mdash; allows logged-in users to change their preferred locale / language setting right from the toolbar menu (instead of having to update their WordPress user profile page).
+Perfect for anyone that needs to switch languages quickly and easily - allows logged-in users to change their preferred locale / language setting right from the toolbar menu (instead of having to update their WordPress user profile page).
 
-The default WordPress behavior is to apply the user locale preference to the admin back-end only &mdash; this plugin extends the user locale / language preference to the front-end webpage as well.
+The default WordPress behavior is to apply the user locale preference to the admin back-end only - this plugin extends the user locale / language preference to the front-end webpage as well.
 
-There are no plugin settings &mdash; simply *install* and *activate* the plugin.
+There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Do you use the Polylang plugin? =
 
