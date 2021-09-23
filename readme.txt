@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
 Requires PHP: 7.0
-Requires At Least: 4.7
+Requires At Least: 5.0
 Tested Up To: 5.8.1
 Stable Tag: 2.0.0
 
