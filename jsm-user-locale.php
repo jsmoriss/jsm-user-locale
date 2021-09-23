@@ -11,7 +11,7 @@
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus. 
  * Requires PHP: 7.0
- * Requires At Least: 4.7
+ * Requires At Least: 5.0
  * Tested Up To: 5.8.1
  * Version: 2.0.0
  *
@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 	class JSM_User_Locale {
 
-		private $wp_min_version = '4.7';
+		private $wp_min_version = '5.0';
 
 		private $dashicons = array(
 			100 => 'admin-appearance',
