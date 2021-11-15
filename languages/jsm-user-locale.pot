@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM's Easy User Locale Selector package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Easy User Locale Selector 2.0.0\n"
+"Project-Id-Version: JSM's Easy User Locale Selector 2.1.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -21,14 +21,9 @@ msgstr ""
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-user-locale.php:389
-msgctxt "toolbar menu title"
-msgid "default"
-msgstr ""
-
-#: jsm-user-locale.php:443
+#: jsm-user-locale.php:383
 msgctxt "toolbar menu item"
-msgid "Default Locale"
+msgid "Default"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
