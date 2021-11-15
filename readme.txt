@@ -81,6 +81,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.1.0-b.1 (2020/11/15)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.0.
+
 **Version 2.0.0 (2020/10/15)**
 
 Maintenance release.
@@ -95,9 +109,13 @@ Maintenance release.
 	* None.
 * **Requires At Least**
 	* PHP v7.0.
-	* WordPress v4.7.
+	* WordPress v5.0.
 
 == Upgrade Notice ==
+
+= 2.1.0-b.1 =
+
+(2020/11/15) Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
 
 = 2.0.0 =
 
