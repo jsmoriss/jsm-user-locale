@@ -81,7 +81,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.1.0 (2020/11/15)**
+**Version 2.1.0 (2021/11/15)**
 
 * **New Features**
 	* None.
@@ -115,7 +115,7 @@ Maintenance release.
 
 = 2.1.0 =
 
-(2020/11/15) Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
+(2021/11/15) Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
 
 = 2.0.0 =
 
