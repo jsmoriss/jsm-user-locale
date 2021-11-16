@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
-Requires PHP: 7.0
-Requires At Least: 5.0
+Requires PHP: 7.2
+Requires At Least: 5.2
 Tested Up To: 5.8.2
 Stable Tag: 2.1.0
 
@@ -92,8 +92,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
 * **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.0.
+	* PHP v7.2.
+	* WordPress v5.2.
 
 **Version 2.0.0 (2020/10/15)**
 
@@ -109,7 +109,7 @@ Maintenance release.
 	* None.
 * **Requires At Least**
 	* PHP v7.0.
-	* WordPress v5.0.
+	* WordPress v5.2.
 
 == Upgrade Notice ==
 
