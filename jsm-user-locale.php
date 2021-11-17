@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 	class JSM_User_Locale {
 
-		private $wp_min_version = '5.0';
+		private $wp_min_version = '5.2';
 
 		private $dashicons = array(
 			100 => 'admin-appearance',
@@ -251,7 +251,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 				if ( $is_admin || $show_on_front ) {
 
 					add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
+
 					add_action( 'admin_bar_menu', array( $this, 'add_locale_toolbar' ), 60, 1 );
+
 					add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
 					if ( isset( $_GET[ 'update-user-locale' ] ) ) {
