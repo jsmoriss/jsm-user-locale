@@ -29,10 +29,6 @@ There are no plugin settings - simply *install* and *activate* the plugin.
 
 If the Polylang plugin is active, the user locale menu will automatically use the correct Polylang language URLs for the current webpage.
 
-= Need a Boost to your Social and Search Ranking? =
-
-[WPSSO is an advanced structured data plugin for WordPress SEO and SMO](https://wordpress.org/plugins/wpsso/) that helps you rank higher and improves click through rates by presenting your content at its best in **search results** and on **social sites** - no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
-
 == Installation ==
 
 = Automated Install =
