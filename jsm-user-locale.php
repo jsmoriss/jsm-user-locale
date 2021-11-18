@@ -291,11 +291,9 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				$plugin_data = get_plugin_data( __FILE__, $markup = false );
 
-				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.',
-					'jsm-user-locale' );
+				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.', 'jsm-user-locale' );
 
-				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-					'jsm-user-locale' );
+				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.', 'jsm-user-locale' );
 
 				deactivate_plugins( $plugin, $silent = true );
 
