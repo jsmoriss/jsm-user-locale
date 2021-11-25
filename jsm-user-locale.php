@@ -13,7 +13,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
- * Version: 2.1.0
+ * Version: 2.2.0-dev.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -30,11 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'JSM_User_Locale' ) ) {
+if ( ! class_exists( 'JsmUserLocale' ) ) {
 
-	class JSM_User_Locale {
-
-		private $wp_min_version = '5.2';
+	class JsmUserLocale {
 
 		private $dashicons = array(
 			100 => 'admin-appearance',
@@ -206,7 +204,7 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 			473 => 'testimonial',
 		);
 
-		private static $instance = null;	// JSM_User_Locale class object.
+		private static $instance = null;	// JsmUserLocale class object.
 
 		public function __construct() {
 
@@ -250,8 +248,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 
 				if ( $is_admin || $show_on_front ) {
 
-					add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
-
 					add_action( 'admin_bar_menu', array( $this, 'add_locale_toolbar' ), 60, 1 );
 
 					add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
@@ -267,39 +263,6 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		public function init_textdomain() {
 
 			load_plugin_textdomain( 'jsm-user-locale', false, 'jsm-user-locale/languages/' );
-		}
-
-		/**
-		 * Check for the minimum required WordPress version.
-		 *
-		 * If we don't have the minimum required version, then de-activate ourselves and die.
-		 */
-		public function check_wp_min_version() {
-
-			global $wp_version;
-
-			if ( version_compare( $wp_version, $this->wp_min_version, '<' ) ) {
-
-				$this->init_textdomain();	// If not already loaded, load the textdomain now.
-
-				$plugin = plugin_basename( __FILE__ );
-
-				if ( ! function_exists( 'deactivate_plugins' ) ) {
-
-					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
-				}
-
-				$plugin_data = get_plugin_data( __FILE__, $markup = false );
-
-				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.', 'jsm-user-locale' );
-
-				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.', 'jsm-user-locale' );
-
-				deactivate_plugins( $plugin, $silent = true );
-
-				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', $this->wp_min_version ) . ' ' . 
-					 sprintf( $notice_upgrade_transl, 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
-			}
 		}
 
 		public function update_user_locale() {
@@ -508,5 +471,5 @@ if ( ! class_exists( 'JSM_User_Locale' ) ) {
 		}
 	}
 
-	JSM_User_Locale::get_instance();
+	JsmUserLocale::get_instance();
 }
