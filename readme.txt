@@ -77,7 +77,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0-rc.1 (2021/11/26)**
+**Version 2.2.0 (2021/11/26)**
 
 * **New Features**
 	* None.
@@ -123,7 +123,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.2.0-rc.1 =
+= 2.2.0 =
 
 (2021/11/26) Removed the minimum WP version check.
 
