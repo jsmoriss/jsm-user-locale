@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.8.2
-Stable Tag: 2.1.0
+Stable Tag: 2.2.0
 
 Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
 
