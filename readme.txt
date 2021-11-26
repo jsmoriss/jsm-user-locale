@@ -77,7 +77,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0-dev.2 (TBD)**
+**Version 2.2.0-b.1 (TBD)**
 
 * **New Features**
 	* None.
@@ -86,7 +86,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Removed the minimum WP version check.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -123,9 +123,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.2.0-dev.2 =
+= 2.2.0-b.1 =
 
-(TBD) None.
+(TBD) Removed the minimum WP version check.
 
 = 2.1.0 =
 
