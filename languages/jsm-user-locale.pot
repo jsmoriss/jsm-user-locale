@@ -1,8 +1,8 @@
-# Copyright (C) 2022 JSM's Easy User Locale Selector
-# This file is distributed under the same license as the JSM's Easy User Locale Selector package.
+# Copyright (C) 2022 JSM's User Locale Selector
+# This file is distributed under the same license as the JSM's User Locale Selector package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Easy User Locale Selector 2.2.0\n"
+"Project-Id-Version: JSM's User Locale Selector 2.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgid "Default"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "JSM's Easy User Locale Selector"
+msgid "JSM's User Locale Selector"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
