@@ -43,7 +43,7 @@ If the Polylang plugin is active, the user locale menu will automatically use th
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
-* {major} = Major structural code changes / re-writes or incompatible API changes.
+* {major} = Major structural code changes and/or incompatible API changes (ie. risk of breaking changes).
 * {minor} = New functionality was added or improved in a backwards-compatible manner.
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
