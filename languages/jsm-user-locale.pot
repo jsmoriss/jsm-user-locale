@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-user-locale.php:351
+#: jsm-user-locale.php:346
 msgctxt "toolbar menu item"
 msgid "Default"
 msgstr ""
