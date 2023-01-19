@@ -297,7 +297,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 				$user_locale = $this->get_default_locale();
 			}
 
-			/**
+			/*
 			 * Use Polylang URLs.
 			 */
 			if ( ! $is_admin && function_exists( 'pll_the_languages' ) ) {
@@ -368,7 +368,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 				$user_locale = 'site-default';
 			}
 
-			/**
+			/*
 			 * Menu icon and title.
 			 */
 			$def_menu_title = empty( $locale_names[ $user_locale ] ) ? $user_locale : $locale_names[ $user_locale ];
@@ -392,7 +392,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 				'meta'   => false,
 			) );
 
-			/**
+			/*
 			 * Menu drop-down items.
 			 */
 			$menu_items = array();
