@@ -248,9 +248,8 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 				if ( $is_admin || $show_on_front ) {
 
-					add_action( 'admin_bar_menu', array( $this, 'add_locale_toolbar' ), 60, 1 );
-
 					add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
+					add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 60, 1 );
 
 					if ( isset( $_GET[ 'update-user-locale' ] ) ) {
 
@@ -331,7 +330,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 			exit;
 		}
 
-		public function add_locale_toolbar( $wp_admin_bar ) {
+		public function add_admin_bar_menu( $wp_admin_bar ) {
 
 			if ( ! $user_id = get_current_user_id() ) {	// Just in case.
 
