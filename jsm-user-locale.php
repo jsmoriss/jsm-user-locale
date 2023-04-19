@@ -242,7 +242,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 					if ( $locale !== $user_locale ) {
 
-						switch_to_locale( $user_locale );
+						switch_to_locale( $user_locale );	// Switches to locale if the WP language is installed.
 					}
 				}
 
