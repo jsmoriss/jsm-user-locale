@@ -1,5 +1,5 @@
-=== JSM's User Locale Selector ===
-Plugin Name: JSM's User Locale Selector
+=== JSM User Locale Selector ===
+Plugin Name: JSM User Locale Selector
 Plugin Slug: jsm-user-locale
 Text Domain: jsm-user-locale
 Domain Path: /languages
