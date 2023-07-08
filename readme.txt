@@ -118,7 +118,7 @@ Maintenance release.
 
 = 2.2.1 =
 
-(2023/07/08) Minor code optimization and standardization:
+(2023/07/08) Minor code optimization and standardization.
 
 = 2.2.0 =
 
