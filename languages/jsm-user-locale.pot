@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM User Locale Selector package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM User Locale Selector 2.2.0\n"
+"Project-Id-Version: JSM User Locale Selector 2.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-user-locale\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"

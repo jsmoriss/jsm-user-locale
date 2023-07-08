@@ -13,7 +13,7 @@
  * Requires PHP: 7.2.34
  * Requires At Least: 5.5
  * Tested Up To: 6.2.2
- * Version: 2.2.0
+ * Version: 2.2.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -238,7 +238,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 				if ( ! $is_admin && $show_on_front ) {	// Apply user locale value to front-end.
 
 					$locale      = get_locale();
-					$user_locale = get_user_meta( $user_id, 'locale', $single = true );
+					$user_locale = get_metadata( 'user', $user_id, 'locale', $single = true );
 
 					if ( $locale !== $user_locale ) {
 
@@ -283,11 +283,11 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 				if ( 'site-default' === $user_locale ) {
 
-					delete_user_meta( $user_id, 'locale' );
+					delete_metadata( 'user', $user_id, 'locale' );
 
 				} else {
 
-					update_user_meta( $user_id, 'locale', $user_locale );
+					update_metadata( 'user', $user_id, 'locale', $user_locale );
 				}
 			}
 
@@ -341,7 +341,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 			$translations  = wp_get_available_translations();
 			$avail_locales = get_available_languages();
-			$user_locale   = get_user_meta( $user_id, 'locale', $single = true );
+			$user_locale   = get_metadata( 'user', $user_id, 'locale', $single = true );
 			$locale_names  = array( 'site-default' => _x( 'Default', 'toolbar menu item', 'jsm-user-locale' ) );
 
 			foreach ( $avail_locales as $locale ) {
