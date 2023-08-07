@@ -463,7 +463,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 			if ( empty( $locale ) ) {
 
-				$locale = 'en_US';      // Just in case.
+				$locale = 'en_US';	// Just in case.
 			}
 
 			return $locale;
