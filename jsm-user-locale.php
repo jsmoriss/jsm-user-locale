@@ -229,8 +229,8 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 		public function init_plugin() {
 
-			$is_admin      = is_admin();
 			$user_id       = get_current_user_id();
+			$is_admin      = is_admin();
 			$show_on_front = apply_filters( 'jsm_user_locale_front_end', true );
 
 			if ( $user_id ) {
