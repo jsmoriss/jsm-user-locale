@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, admin, back-end, front-end, polylang
 Contributors: jsmoriss
 Requires PHP: 7.2.34
-Requires At Least: 5.5
+Requires At Least: 5.8
 Tested Up To: 6.4.2
 Stable Tag: 2.2.1
 
@@ -68,7 +68,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* Replaced `{get|update|delete}_{comment|post|term|user}_meta()` functions by `{get|update|delete}_metadata()`.
 * **Requires At Least**
 	* PHP v7.2.34.
-	* WordPress v5.5.
+	* WordPress v5.8.
 
 **Version 2.2.0 (2021/11/26)**
 
