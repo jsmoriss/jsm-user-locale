@@ -9,7 +9,7 @@
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.5.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>user, locale, language, select, admin, back-end, front-end, polylang</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>user, locale, language, select, polylang</td></tr>
 </table>
 
 <h2>Description</h2>

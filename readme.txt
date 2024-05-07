@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
-Tags: user, locale, language, select, admin, back-end, front-end, polylang
+Tags: user, locale, language, select, polylang
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
