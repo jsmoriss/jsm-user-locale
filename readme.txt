@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-user-locale/assets/
 Tags: user, locale, language, select, polylang
 Contributors: jsmoriss
-Requires PHP: 7.2.34
-Requires At Least: 5.8
+Requires PHP: 7.4.33
+Requires At Least: 5.9
 Tested Up To: 6.6.2
 Stable Tag: 2.2.1
 
@@ -67,68 +67,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Minor code optimization and standardization:
 		* Replaced `{get|update|delete}_{comment|post|term|user}_meta()` functions by `{get|update|delete}_metadata()`.
 * **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 2.2.0 (2021/11/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Removed the minimum WP version check.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-
-**Version 2.1.0 (2021/11/15)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-
-**Version 2.0.0 (2020/10/15)**
-
-Maintenance release.
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a call to switch_to_locale() on the front-end.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
+	* PHP v7.4.33.
+	* WordPress v5.9.
 
 == Upgrade Notice ==
 
 = 2.2.1 =
 
 (2023/07/08) Minor code optimization and standardization.
-
-= 2.2.0 =
-
-(2021/11/26) Removed the minimum WP version check.
-
-= 2.1.0 =
-
-(2021/11/15) Refactored the `JSM_User_Locale->add_locale_toolbar()` method.
-
-= 2.0.0 =
-
-(2020/10/15) Added a call to switch_to_locale() on the front-end.
 
