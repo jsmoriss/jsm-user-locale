@@ -354,10 +354,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 					$native_name = 'English (United States)';
 
-				} else {
-
-					$native_name = $locale;
-				}
+				} else $native_name = $locale;
 
 				$locale_names[ $locale ] = $native_name;
 			}
