@@ -428,7 +428,7 @@ if ( ! class_exists( 'JsmUserLocale' ) ) {
 
 			if ( isset( $wp_local_package ) ) {
 
-	      			$locale = $wp_local_package;
+				$locale = $wp_local_package;
 			}
 
 			if ( defined( 'WPLANG' ) ) {
