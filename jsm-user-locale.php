@@ -12,7 +12,7 @@
  * Description: Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus.
  * Requires PHP: 7.4.33
  * Requires At Least: 6.0
- * Tested Up To: 7.0.2
+ * Tested Up To: 7.1
  * Version: 2.2.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
