@@ -16,7 +16,6 @@ msgstr ""
 msgctxt "toolbar menu item"
 msgid "Default"
 msgstr ""
-
 #. Plugin Name of the plugin/theme
 msgid "JSM User Locale Selector"
 msgstr ""
@@ -26,9 +25,7 @@ msgid "https://surniaulula.com/extend/plugins/jsm-user-locale/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Add a quick and easy user locale / language selector in the WordPress admin "
-"back-end and front-end toolbar menus."
+msgid "Add a quick and easy user locale / language selector in the WordPress admin back-end and front-end toolbar menus."
 msgstr ""
 
 #. Author of the plugin/theme
